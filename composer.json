@@ -1,0 +1,23 @@
+{
+  "name" : "AaronAviles",
+  "authors" : [
+    {
+      "name" : "Mason Hernandez",
+      "email" : "mherhnandez2@mail.greenriver.edu"
+    },
+    {
+      "name" : "Raine Something",
+      "email" : "rsomething@mail.greenriver.edu"
+    },
+    {
+      "name" : "Toygan Sevim",
+      "email" :"tsevim@mail.greenriver.edu"
+    }
+  ],
+  "require" : {
+    "bcosca/fatfree-core" : "dev-master"
+  },
+  "autoload": {
+    "classmap" : ["model/"]
+  }
+}
