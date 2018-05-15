@@ -65,7 +65,7 @@
     </div>
 </nav>
 
-<div class="container h-100" >
+<div class="container h-100">
     <div class="row h-100 justify-content-center">
         <div class="container pt-5 col-12 mx-auto h-100" id="main-container">
             <div id="map" class="h-100 w-100"></div>
@@ -78,20 +78,13 @@
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
+<script src="model/googleMap.js"></script>
 
-<!-- Google Maps Script -->
-<script>
-    function myMap() {
-        var mapCanvas = document.getElementById("map");
-        var mapOptions = {
-            center: new google.maps.LatLng(0, 0),
-            zoom: 2
-        };
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-    }
-</script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&callback=myMap"></script>
+
+<!-- Google Maps Script -->
+
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
