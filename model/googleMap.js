@@ -1,3 +1,4 @@
+
 function myMap() {
 
 
@@ -9,16 +10,16 @@ function myMap() {
     var mapCanvas = document.getElementById("map");
     var mapOptions = {
         center: VegasDay,
-        zoom: 2
+        zoom: 5
     };
 
-    //var map = new google.maps.Map(mapCanvas, mapOptions);
+    var map = new google.maps.Map(mapCanvas, mapOptions);
 
 
     var markerLA = new google.maps.Marker(
         {
             position: LAstadium,
-            map: mapCanvas,
+            map: map,
             title: "Los Angles"
         }
     );
@@ -26,7 +27,7 @@ function myMap() {
     var markerLV = new google.maps.Marker(
         {
             position: VegasDay,
-            map: mapCanvas,
+            map: map,
             title: "Las Vegas"
 
         }
@@ -35,10 +36,11 @@ function myMap() {
     var markerWA = new google.maps.Marker(
         {
             position: SpaceNeedle,
-            map: mapCanvas,
+            map: map,
             title: "Space Needle"
 
         }
     );
 
 }
+

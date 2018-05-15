@@ -7,7 +7,7 @@
      */
 
     //Set Refresh header using PHP.
-    header( "refresh:5;url=../AaronAviles/admin" );
+    header( "refresh:5;url=../admin" );
 
     // Send to file upload
     include "file-upload.php";
@@ -46,5 +46,5 @@
     // make sure the file is writable
 
     // if it is, write the temporary array back into the file.
-    echo is_writable("test_events.json") ? file_put_contents("test_events.json" . ": Written Successfully!",
+    echo is_writable("test_events.json") ? file_put_contents("test_events.json",
                              json_encode($tempEvent)) : "Something went wrong!";
