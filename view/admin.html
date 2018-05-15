@@ -1,7 +1,7 @@
 <!--
-Author: Tyler Bezera
+Author: Raine Padilla (Initially done by Tyler Bezera)
 Date: 4/25/2018
-Updated: 4/27/2018
+Updated: 5/14/2018
 Team: Remote Workers
 -->
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ Team: Remote Workers
                 <div class="left-sidebar-wrapper">
                     <ul class="nav flex-column">
                         <!--<li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Dashboard</span></a></li>-->
-                        <li class="nav-item" href="#"><a href="model/AdminAdd.php"><span class="nav-icon"><img src="octicons/svg/checklist.svg">Add an Event</span></a></li>
+                        <li class="nav-item" href="#"><a href="" data-toggle="modal" data-target="#addEventModal"><span class="nav-icon"><img src="octicons/svg/checklist.svg">Add an Event</span></a></li>
                     </ul>
                 </div>
                 <!-- End Left Side Bar Wrapper Div -->
@@ -60,7 +60,55 @@ Team: Remote Workers
         <div class="col-10">
             <!-- Main Content Div -->
             <div class="main-content">
-
+                <!-- Modal -->
+                <div class="modal fade" id="addEventModal" tabindex="-1" role="dialog" aria-labelledby="addEventModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addEventModalTitle">Add an Event</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Add Event Form -->
+                                <form class="form" action="" method="post" role="form" autocomplete="off">
+                                    <div class="form-group">
+                                        <label for="eventName">Event Name</label>
+                                        <input type="text" class="form-control" id="eventName" name="eventName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eventContent">Event Content</label>
+                                        <textarea class="form-control" id="eventContent" name="eventContent" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eventImage">Event Images</label>
+                                        <input type="file" class="form-control-file" id="eventImage">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eventCategory">Event Category</label>
+                                        <select class="form-control" id="eventCategory" name="eventCategory">
+                                            <option selected>Entertainment</option>
+                                            <option>Hospitality</option>
+                                            <option>Travel</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="startDate">Event Date</label>
+                                        <input type="date" class="form-control" id="startDate" name="startDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eventUrl">URL</label>
+                                        <input type="text" class="form-control" id="eventUrl" name="eventUrl">
+                                        <label for="urlCaption">Caption</label>
+                                        <input type="text" class="form-control" id="urlCaption" name="urlCaption">
+                                    </div>
+                                        <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- End Main Content Div -->
         </div>

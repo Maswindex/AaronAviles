@@ -128,11 +128,13 @@ Team: Remote Workers
                                         </div>
                                         <div class="form-group">
                                             <label for="startDate">Event Date</label>
-                                            <input type="text" class="form-control" id="startDate" name="startDate">
+                                            <input type="date" class="form-control" id="startDate" name="startDate">
                                         </div>
                                         <div class="form-group">
                                             <label for="eventUrl">URL</label>
                                             <input type="text" class="form-control" id="eventUrl" name="eventUrl">
+                                            <label for="urlCaption">Caption</label>
+                                            <input type="text" class="form-control" id="urlCaption" name="urlCaption">
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
