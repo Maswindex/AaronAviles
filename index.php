@@ -22,7 +22,7 @@ $f3->route('GET /places', function() {
     echo $view->render('view/places.html');
 });
 
-$f3->route('GET /admin', function() {
+$f3->route('GET|POST /admin', function() {
     $view = new View();
     echo $view->render('view/admin.html');
 });

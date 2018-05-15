@@ -48,7 +48,8 @@ Team: Remote Workers
                 <div class="left-sidebar-wrapper">
                     <ul class="nav flex-column">
                         <!--<li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Dashboard</span></a></li>-->
-                        <li class="nav-item" href="#"><a href="" data-toggle="modal" data-target="#addEventModal"><span class="nav-icon"><img src="octicons/svg/checklist.svg">Add an Event</span></a></li>
+                        <li class="nav-item" href="#"><a href="" data-toggle="modal" data-target="#addEventModal"><span class="nav-icon">
+                            <img src="octicons/svg/checklist.svg">Add an Event</span></a></li>
                     </ul>
                 </div>
                 <!-- End Left Side Bar Wrapper Div -->
@@ -72,7 +73,7 @@ Team: Remote Workers
                             </div>
                             <div class="modal-body">
                                 <!-- Add Event Form -->
-                                <form class="form" action="" method="post" role="form" autocomplete="off">
+                                <form class="form" action="model/add-event.php" method="post" role="form" autocomplete="off">
                                     <div class="form-group">
                                         <label for="eventName">Event Name</label>
                                         <input type="text" class="form-control" id="eventName" name="eventName">
@@ -83,7 +84,7 @@ Team: Remote Workers
                                     </div>
                                     <div class="form-group">
                                         <label for="eventImage">Event Images</label>
-                                        <input type="file" class="form-control-file" id="eventImage">
+                                        <input type="file" class="form-control-file" id="eventImage" name="eventImage[]">
                                     </div>
                                     <div class="form-group">
                                         <label for="eventCategory">Event Category</label>
