@@ -46,5 +46,5 @@
     // make sure the file is writable
 
     // if it is, write the temporary array back into the file.
-    echo is_writable("test_events.json") ? file_put_contents("test_events.json" . ": Written Successfully!",
+    echo is_writable("test_events.json") ? file_put_contents("test_events.json",
                              json_encode($tempEvent)) : "Something went wrong!";
