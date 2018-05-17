@@ -1,46 +1,44 @@
-
 function myMap() {
 
-
-    var LAstadium = {lat: 34.0430, lng: -118.2673};
-    var VegasDay = {lat: 36.1162, lng: -115.1745};
-    var SpaceNeedle = {lat: 47.6205, lng: -122.3493};
-
+    var locations = [
+        {
+            position: {
+                lat: 34.0430,
+                lng: -118.2673
+            },
+            title: 'LAStadium'
+        },{
+            position: {
+                lat: 36.1162,
+                lng: -115.1745
+            },
+            title: 'VegasDay'
+        },{
+            position: {
+                lat: 47.6205,
+                lng: -122.3493
+            },
+            title: 'SpaceNeedle'
+        }
+    ];
+    var markers = [];
 
     var mapCanvas = document.getElementById("map");
+
     var mapOptions = {
-        center: VegasDay,
+        center: locations[0].position,
         zoom: 5
     };
 
     var map = new google.maps.Map(mapCanvas, mapOptions);
 
-
-    var markerLA = new google.maps.Marker(
-        {
-            position: LAstadium,
-            map: map,
-            title: "Los Angles"
-        }
-    );
-
-    var markerLV = new google.maps.Marker(
-        {
-            position: VegasDay,
-            map: map,
-            title: "Las Vegas"
-
-        }
-    );
-
-    var markerWA = new google.maps.Marker(
-        {
-            position: SpaceNeedle,
-            map: map,
-            title: "Space Needle"
-
-        }
-    );
-
+    for (var i = 0 ; i < locations.length ; i++) {
+        markers[i] = new google.maps.Marker(
+            {
+                position: locations[i].position,
+                map: map,
+                title: locations[i].title
+            }
+        );
+    }
 }
-
