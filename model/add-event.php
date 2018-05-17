@@ -7,7 +7,11 @@
      */
 
     //Set Refresh header using PHP.
-    header( "refresh:5;url=../AaronAviles/admin" );
+<<<<<<< HEAD
+    header( "refresh:5;url=../admin" );
+=======
+    header( "refresh:5;url=./admin" );
+>>>>>>> ffa2cdb5ea13eb247765c16d2b1c3082057c1e57
 
     // Send to file upload
     include "file-upload.php";
@@ -25,26 +29,31 @@
     $day = $eventDate[2]; // start_date.day
 
 
-    $event = array();
-    $event['text']['headline'] = $eventName;
-    $event['text']['text'] = $eventDescription . " - " . $eventCategory;
     $event['media']['url'] = $eventUrl;
     $event['media']['caption'] = $eventUrlCaption;
     $event['start_date']['month'] = $month;
     $event['start_date']['day'] = $day;
     $event['start_date']['year'] = $year;
+    $event['text']['headline'] = $eventName;
+    $event['text']['text'] = $eventDescription . " - " . $eventCategory;
+
+    print_r($event);
 
 
     // Pull the contents of the events.json file
     $file = file_get_contents("test_events.json");
 
     // Create a temporary array to hold all events
-    $tempEvent = json_decode($file, true);
+    $tempEvent[] = json_decode($file, true);
 
     // Add the new event to the events array
-    $tempEvent[] = $event;
-    // make sure the file is writable
+    array_push($tempEvent, $event);
 
+    // make sure the file is writable
     // if it is, write the temporary array back into the file.
-    echo is_writable("test_events.json") ? file_put_contents("test_events.json" . ": Written Successfully!",
+    echo is_writable("test_events.json") ? file_put_contents("test_events.json",
+<<<<<<< HEAD
                              json_encode($tempEvent)) : "Something went wrong!";
+=======
+                             json_encode(array_values($tempEvent))) : "Something went wrong!";
+>>>>>>> ffa2cdb5ea13eb247765c16d2b1c3082057c1e57
