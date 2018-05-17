@@ -13,45 +13,33 @@ Team: Remote Workers
     <link rel="stylesheet" href="styles/adminstyles.css" type="text/css">
 </head>
 <body>
-
-<!--NAVBAR-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
-    <div class="row m-0 p-0 w-100 navNav">
-        <a class="navbar-brand font-weight-light col col-lg-4 mr-0" href="#">
-            AaronAviles.com
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse justify-content-around navbar-collapse col col-lg-4" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link p-0 mr-4" href="./places">Places</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link p-0 mr-4" href="./">Life</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link p-0 mr-4 active" href="./admin">Admin</a>
-                </li>
-
-            </ul>
-            <!--<form class="form-inline my-2 my-lg-0">-->
-            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-            <!--</form>-->
-        </div>
-    </div>
-</nav>
 <!-- Body Container Div -->
-
+<div class="wrapper container-fluid">
+    <!-- Nav -->
+    <nav class="navbar navbar-expanded fixed-top aa-header-top">
+        <div class="aa-header">
+            <div class="page-title">
+                <span>Aaron Aviles</span>
+            </div>
+        </div>
+        <div class="aa-header-right">
+            <div class="page-title">
+                <span>Dashboard</span>
+            </div>
+            <ul class="nav navbar-nav float-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link icon-nav">
+                        <img class="aa-button-icon" src="octicons/svg/gear.svg">
+                    </a>
+                </li>
+                <li class="nav-item dropdown"></li>
+                <li class="nav-item dropdown"></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Nav-->
     <!-- Main Content Row -->
-    <div class="row content mh-100 mt-0">
+    <div class="row content mh-100">
         <!-- Left Side Bar Column -->
         <div class="col-2">
             <!-- Left Side Bar Div -->
@@ -62,6 +50,11 @@ Team: Remote Workers
                         <!--<li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Dashboard</span></a></li>-->
                         <li class="nav-item" href="#"><a href="" data-toggle="modal" data-target="#addEventModal"><span class="nav-icon">
                             <img src="octicons/svg/checklist.svg">Add an Event</span></a></li>
+                        <li class="nav-item" href="#"><a href=""><span class="nav-icon"><img src="octicons/svg/home.svg">Update/Delete Event</span></a></li>
+                        <li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Add Location</span></a></li>
+                        <li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Update/Delete Location</span></a></li>
+                        <li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Add Partner</span></a></li>
+                        <li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Update/Delete Partner</span></a></li>
                     </ul>
                 </div>
                 <!-- End Left Side Bar Wrapper Div -->
@@ -73,7 +66,7 @@ Team: Remote Workers
         <div class="col-10">
             <!-- Main Content Div -->
             <div class="main-content">
-                <!-- Modal -->
+                <!-- Add Event Modal -->
                 <div class="modal fade" id="addEventModal" tabindex="-1" role="dialog" aria-labelledby="addEventModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -116,7 +109,7 @@ Team: Remote Workers
                                         <label for="urlCaption">Caption</label>
                                         <input type="text" class="form-control" id="urlCaption" name="urlCaption">
                                     </div>
-                                        <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
+                                    <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
                                 </form>
                             </div>
                         </div>
@@ -128,6 +121,7 @@ Team: Remote Workers
         <!-- End Main Column -->
     </div>
     <!-- End Main Content Row -->
+</div>
 <!-- End Body Container -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
