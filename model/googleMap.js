@@ -1,3 +1,4 @@
+"use strict";
 var locations = [
     {
         position: {
@@ -52,8 +53,21 @@ function myMap() {
     };
     var map = new google.maps.Map(mapCanvas, mapOptions);
 
+
+    //autocompleete input
+    // var input = document.getElementById('autocomplete');
+    // var autocomplete = new google.maps.places.Autocomplete(input);
+
+    var input = document.getElementById('autocomplete');
+    var autocomplete = new google.maps.places.Autocomplete(input, {types: ['(cities)']});
+    // google.maps.event.addListener(autocomplete, 'place_changed', function () {
+    // var place = autocomplete.getPlace();
+
+    // })
+
+
     //create each marker
-    for (var i = 0 ; i < locations.length ; i++) {
+    for (var i = 0; i < locations.length; i++) {
         markers[i] = new google.maps.Marker(
             {
                 position: locations[i].position,
@@ -61,8 +75,8 @@ function myMap() {
                 title: locations[i].title
             }
 
-        //add listeners to each to display modal
-        ).addListener('click', function() {
+            //add listeners to each to display modal
+        ).addListener('click', function () {
             //alert(displayEvents(this.title));
             displayEvents(this.title);
         });
@@ -72,13 +86,13 @@ function myMap() {
 function displayEvents(title) {
 
     //loop through locations
-    for (var i = 0 ; i < locations.length ; i++) {
+    for (var i = 0; i < locations.length; i++) {
 
         //when the location with the passed title is found
-        if(locations[i].title == title) {
+        if (locations[i].title == title) {
 
             //loops through events contained in location
-            for (var j = 0 ; j < locations[i].events.length ; j++) {
+            for (var j = 0; j < locations[i].events.length; j++) {
 
                 //alerts the event
                 var eventHeadline = locations[i].events[j];

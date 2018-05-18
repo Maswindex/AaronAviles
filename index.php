@@ -12,20 +12,24 @@ require_once 'vendor/autoload.php';
 $f3 = Base::instance();
 session_start();
 
-$f3->route('GET /', function() {
+$f3->route('GET /', function ()
+{
     $view = new View();
     echo $view->render('view/timeline.html');
 });
 
-$f3->route('GET /places', function() {
+$f3->route('GET /places', function ()
+{
     $view = new View();
     echo $view->render('view/places.html');
 });
 
-$f3->route('GET|POST /admin', function() {
+$f3->route('GET|POST /admin', function ()
+{
     $view = new View();
     echo $view->render('view/admin.html');
 });
 
 $f3->set('DEBUG', 3);
+
 $f3->run();
