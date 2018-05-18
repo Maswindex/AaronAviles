@@ -44,7 +44,8 @@ var locations = [
     }
 ];
 
-function myMap() {
+function myMap()
+{
     var markers = [];
     var mapCanvas = document.getElementById("map");
     var mapOptions = {
@@ -52,7 +53,6 @@ function myMap() {
         zoom: 5
     };
     var map = new google.maps.Map(mapCanvas, mapOptions);
-
 
     //create each marker
     for (var i = 0; i < locations.length; i++) {
@@ -63,28 +63,56 @@ function myMap() {
                 title: locations[i].title
             }
 
-            //add listeners to each to display modal
+        //add listeners to each to display modal
         ).addListener('click', function () {
+
             //alert(displayEvents(this.title));
             displayEvents(this.title);
         });
     }
 }
 
-function displayEvents(title) {
+function displayEvents(locationTitle)
+{
+    var locationEvents = [];
+    var track = 0;
+    var locIndex;
 
-    //loop through locations
-    for (var i = 0; i < locations.length; i++) {
-
+    //loop through all location objects
+    for (var i = 0; i < locations.length; i++)
+    {
         //when the location with the passed title is found
-        if (locations[i].title == title) {
+        if (locations[i].title == locationTitle)
+        {
+            //log the index
+            locIndex = i;
+            i = locations.length;
+        }
+    }
 
-            //loops through events contained in location
-            for (var j = 0; j < locations[i].events.length; j++) {
+    //grab all events from the events
+    var totalEvents;
+    $.getJSON("model/test_events.json", function(json) {
+        console.log(json);
+    });
 
-                //alerts the event
-                var eventHeadline = locations[i].events[j];
-                alert(eventHeadline);
+    var locEventTitles = locations[locIndex].events;
+    var event;
+
+    //loops through events contained in the location
+    for (var i = 0; i < locEventTitles.length; i++)
+    {
+        //loop through all the events to find the
+        //full event based on passed title
+        for (var j = 0; j < totalEvents.length; j++)
+        {
+            event = totalEvents[j].text;
+
+            // if the event headline matches the event
+            // title passed by the location matches
+            if (event.headline == locEventTitles[i])
+            {
+                alert(event.text);
             }
         }
     }
