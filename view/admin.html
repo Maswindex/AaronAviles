@@ -9,52 +9,101 @@ Team: Remote Workers
 <head>
     <meta charset="UTF-8">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/adminstyles.css" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+            crossorigin="anonymous"></script>
+
+    <style>
+        html, body {
+            height: 100% !important;
+        }
+    </style>
+
 </head>
-<body>
-<!-- Body Container Div -->
-<div class="wrapper container-fluid">
-    <!-- Nav -->
-    <nav class="navbar navbar-expanded fixed-top aa-header-top">
-        <div class="aa-header">
-            <div class="page-title">
-                <span>Aaron Aviles</span>
-            </div>
-        </div>
-        <div class="aa-header-right">
-            <div class="page-title">
-                <span>Dashboard</span>
-            </div>
-            <ul class="nav navbar-nav float-right">
-                <li class="nav-item dropdown">
-                    <a class="nav-link icon-nav">
-                        <img class="aa-button-icon" src="octicons/svg/gear.svg">
-                    </a>
+<body class="h-100">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
+    <div class="row m-0 p-0 w-100 navNav">
+        <a class="navbar-brand font-weight-light col col-lg-4 mr-0" href="#">
+            AaronAviles.com
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse justify-content-around navbar-collapse col col-lg-4" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link p-0 mr-4" href="./places">Places</a>
                 </li>
-                <li class="nav-item dropdown"></li>
-                <li class="nav-item dropdown"></li>
+
+                <li class="nav-item">
+                    <a class="nav-link p-0 mr-4" href="./">Life</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link p-0 mr-4 active" href="./admin">Admin</a>
+                </li>
+
             </ul>
+            <!--<form class="form-inline my-2 my-lg-0">-->
+            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+            <!--</form>-->
         </div>
-    </nav>
+    </div>
+</nav>
+
+<!-- Body Container Div -->
+<div class="container-fluid h-100 mx-0">
     <!-- End Nav-->
     <!-- Main Content Row -->
-    <div class="row content mh-100">
+    <div class="row h-100">
         <!-- Left Side Bar Column -->
-        <div class="col-2">
+        <div class="col-3 h-100">
             <!-- Left Side Bar Div -->
             <div class="left-sidebar">
                 <!-- Left Side Bar Wrapper Div -->
                 <div class="left-sidebar-wrapper">
                     <ul class="nav flex-column">
-                        <!--<li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Dashboard</span></a></li>-->
-                        <li class="nav-item" href="#"><a href="" data-toggle="modal" data-target="#addEventModal"><span class="nav-icon">
-                            <img src="octicons/svg/checklist.svg">Add an Event</span></a></li>
-                        <li class="nav-item" href="#"><a href=""><span class="nav-icon"><img src="octicons/svg/home.svg">Update/Delete Event</span></a></li>
-                        <li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Add Location</span></a></li>
-                        <li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Update/Delete Location</span></a></li>
-                        <li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Add Partner</span></a></li>
-                        <li class="nav-item" href="#"><a href="admin.html"><span class="nav-icon"><img src="octicons/svg/home.svg">Update/Delete Partner</span></a></li>
+                        <li class="nav-item" href="#">
+                            <a href="" data-toggle="modal" data-target="#addEventModal">
+                                <i class="fas fa-list text-dark"></i> <span class="nav-icon">Add an Event</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" href="#">
+                            <a href="">
+                                <span class="nav-icon">
+                                <i class="fas fa-list text-dark"></i> Update/Delete Event</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" href="#">
+                            <a href="admin.html">
+                                <i class="fas fa-list text-dark"></i> <span class="nav-icon">Add Location</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" href="#">
+                            <a href="">
+                                <span class="nav-icon">
+                                <i class="fas fa-list text-dark"></i> Update/Delete Location</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" href="#">
+                            <a href="admin.html">
+                                <i class="fas fa-list text-dark"></i> <span class="nav-icon">Add Partner</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" href="#">
+                            <a href="">
+                                <span class="nav-icon">
+                                <i class="fas fa-list text-dark"></i> Update/Delete Partner</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- End Left Side Bar Wrapper Div -->
@@ -63,7 +112,7 @@ Team: Remote Workers
         </div>
         <!-- End Side Bar Column -->
         <!-- Main Column -->
-        <div class="col-10">
+        <div class="col-9 h-100">
             <!-- Main Content Div -->
             <div class="main-content">
                 <!-- Add Event Modal -->
