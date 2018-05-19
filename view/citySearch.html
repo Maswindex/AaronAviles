@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search City</title>
+    <title>www.W3docs.com</title>
     <style>
         input {
             height: 30px;
@@ -11,15 +11,23 @@
             box-shadow: 0px 0px 12px #EFEFEF;
         }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&callback=test"
+            async defer></script>
 
 </head>
 <body>
 <input type="text" id="autocomplete"/>
 
 <script>
-    var input = document.getElementById('autocomplete');
-    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    function test() {
+        var input = document.getElementById('autocomplete');
+        var autocomplete = new google.maps.places.Autocomplete(input, {types: ['(cities)']});
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            var place = autocomplete.getPlace();
+        })
+    }
+
 </script>
 </body>
 </html>
