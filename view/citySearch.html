@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>www.W3docs.com</title>
+    <title>www.TOYSEV.com</title>
     <style>
         input {
             height: 30px;
@@ -11,28 +11,46 @@
             box-shadow: 0px 0px 12px #EFEFEF;
         }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&callback=test"
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"/>
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet"/>
+    <!-- Ubuntu Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"/>
+    <!-- Custom CSS -->
+    <script src="../model/locationCreate.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
             async defer></script>
 
 </head>
 <body>
 <input type="text" id="autocomplete"/>
 
-<script>
 
-    function test() {
-        var input = document.getElementById('autocomplete');
-        var autocomplete = new google.maps.places.Autocomplete(input);
-        // , {types: ['(cities)']});
-        // google.maps.event.addListener(autocomplete, 'place_changed', function () {
-        //     var place = autocomplete.getPlace(); })
-        //
+<form action="#">
+    <label for="country"> Country:
+        <input type="text" name="country" id="country">
+    </label>
 
-        var locationSelected = input;
+    <label for="city"> City:
+        <input type="text" name="city" id="city">
+    </label>
+
+    <label for="state"> State:
+        <input type="text" name="state" id="state">
+    </label>
+    <label for="latitude"> latitude:
+        <input type="text" name="latitude" id="latitude">
+    </label>
+    <label for="longitude"> Longitude:
+        <input type="text" name="longitude" id="longitude">
+    </label>
 
 
-    }
-
-</script>
+</form>
 </body>
 </html>
