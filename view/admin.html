@@ -17,13 +17,10 @@ Team: Remote Workers
             crossorigin="anonymous"></script>
 
 
-    <script src="model/generateLocation.js" type="text/javascript></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=autoCompleteLocation"
+    <script src="../model/locationCreate.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
             async defer></script>
     <style>
-
-
         html, body {
             height: 100% !important;
         }
@@ -204,13 +201,13 @@ Team: Remote Workers
                                 <!-- Add Event Form -->
 
                                 <!--FORM-->
-                                <form class="form" action="">
+                                <form class="form" action="#" method="get">
 
                                     <!--AUTOCOMPLETE-->
                                     <div class="form-group">
-
                                         <input type="text" name="inputLocation" id="inputLocation">
                                     </div>
+
                                     <!--Fill the address-->
                                     <div class="form-group">
                                         <label for="country"> Country:

@@ -1,4 +1,4 @@
-google.maps.event.addDomListener(window, 'load', autoCompleteLocation);
+"use strict";
 
 
 //create a autocomplete location generator
@@ -9,22 +9,22 @@ function autoCompleteLocation() {
         city: document.getElementById('city'),
         state: document.getElementById('state'),
         country: document.getElementById('country'),
-        clear: function () {
-            this.latitude.val('').blur();
-        }
+        // clear: function () {
+        //     this.latitude.val('').blur();
+        // }
     }
 
     //select the input box
     var inputLocation = document.getElementById('inputLocation');
 
     //place the input to the google API / options can be passed in as parameters
-    var autoComplete = new google.maps.places.Autocompete(inputLocation);
+    var autocomplete = new google.maps.places.Autocomplete(inputLocation);
 
     //On every Place change that occurs on the search box | add event listeners
-    google.maps.event.addListerener(autoComplete, 'place_chaged', function () {
+    google.maps.event.addListener(autocomplete, 'place_chaged', function () {
 
         //get the response array of Google API
-        var responseLocation = autoComplete.getPlaces();
+        var responseLocation = autocomplete.getPlaces();
 
 
         //Fill in the generated form
@@ -44,3 +44,5 @@ function autoCompleteLocation() {
 
     });
 }
+
+google.maps.event.addDomListener(window, 'load', autoCompleteLocation);
