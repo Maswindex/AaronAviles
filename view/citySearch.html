@@ -22,37 +22,68 @@
     <!-- Ubuntu Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"/>
     <!-- Custom CSS -->
-    <script src="../model/locationCreate.js"></script>
+    <script src="js/locationCreate.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
             async defer></script>
 
 </head>
 <body>
-<input type="text" id="inputLocation"/>
 
 
-<form action="#">
-    <label for="country"> Country:
-        <input type="text" name="country" id="country">
-    </label>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <div class="col-6 w-100 h-75 float-left border-right-2 ml-5 pl-2 pt-2 mt-5">
+                    <!--FORM TO Submit location-->
+                    <form class="form" action="modal/add-location.php" method="post">
 
-    <label for="city"> City:
-        <input type="text" name="city" id="city">
-    </label>
+                        <!--AUTOCOMPLETE-->
+                        <div class="form-group">
+                            <label for="inputLocation"> Search Place:
+                                <input type="text" class="form-control" name="inputLocation"
+                                       id="inputLocation">
+                            </label>
+                        </div>
 
-    <label for="state"> State:
-        <input type="text" name="state" id="state">
-    </label>
-    <label for="latitude"> latitude:
-        <input type="text" name="latitude" id="latitude">
-    </label>
-    <label for="longitude"> Longitude:
-        <input type="text" name="longitude" id="longitude">
-    </label>
+                        <!--Fill the address-->
+                        <div class="form-group">
+                            <label for="country"> Country:
+                                <input type="text" class="form-control" name="country" id="country">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="city"> City:
+                                <input type="text" class="form-control" name="city" id="city">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="state"> State:
+                                <input type="text" class="form-control" name="state" id="state">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="latitude"> latitude:
+                                <input type="text" class="form-control" name="latitude" id="latitude">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude"> Longitude:
+                                <input type="text" class="form-control" name="longitude" id="longitude">
+                            </label>
+                        </div>
+                        <div class="form-group text-center ">
 
-    <div class="address"></div>
+                            <button type="submit" class="btn btn-success btn-lg float-right">Add Location
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
+        </div>
+    </div>
+</div>
 
-</form>
 </body>
 </html>

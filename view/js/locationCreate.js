@@ -1,5 +1,4 @@
 // Small working copy
-
 google.maps.event.addDomListener(window, 'load', test);
 
 function test() {
@@ -26,12 +25,17 @@ function test() {
         address += "<li>Lat : </li>" + place.geometry.location[0] + "</br>";
         address += "<li>Lng : </li>" + place.geometry.location[1] + "</br>";
 
+
+        var jsonString = JSON.parse(place.geometry);
+
+        console.log(jsonString);
+
+
         location.latitude.value = place.geometry.location.lat();
         location.city.value = place.name;
         location.longitude.value = place.geometry.location.lng();
         location.country.value = place.formatted_address;
         location.state.value = place.address_components[2].short_name;
-
 
 
         // document.getElementsByClassName("address").value += address;

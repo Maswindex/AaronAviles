@@ -1,3 +1,7 @@
+/**
+ * Mason hernandez marker + map API
+ *
+ */
 "use strict";
 var locations = [
     {

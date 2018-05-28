@@ -1,8 +1,9 @@
 <?
 /*
- * Author: Raine Padilla
+ * Author: Raine Padilla | Toygan Sevim
+ *
  * Date: 4/30/18
- * Updated: 5/14/18
+ * Updated: 05/23/18
  * Team: Remote Workers
  */
 
