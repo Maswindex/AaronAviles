@@ -119,42 +119,45 @@ Team: Remote Workers
                     </div>
 
                     <!-- Event Form -->
-                    <form class="form col-md-6" action="model/add-event.php" method="post" role="form"
-                          autocomplete="off">
-                        <div class="form-group">
-                            <label for="eventName">Event Name</label>
-                            <input type="text" class="form-control" id="eventName" name="eventName">
-                        </div>
-                        <div class="form-group">
-                            <label for="eventContent">Event Content</label>
-                            <textarea class="form-control" id="eventContent" name="eventContent"
-                                      rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="eventImage">Event Images</label>
-                            <input type="file" class="form-control-file" id="eventImage"
-                                   name="eventImage[]">
-                        </div>
-                        <div class="form-group">
-                            <label for="eventCategory">Event Category</label>
-                            <select class="form-control" id="eventCategory" name="eventCategory">
-                                <option selected>Entertainment</option>
-                                <option>Hospitality</option>
-                                <option>Travel</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="startDate">Event Date</label>
-                            <input type="date" class="form-control" id="startDate" name="startDate">
-                        </div>
-                        <div class="form-group">
-                            <label for="eventUrl">URL</label>
-                            <input type="text" class="form-control" id="eventUrl" name="eventUrl">
-                            <label for="urlCaption">Caption</label>
-                            <input type="text" class="form-control" id="urlCaption" name="urlCaption">
-                        </div>
-                        <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
-                    </form>
+                    <div class="col-md-6">
+                        <h5>Event Form</h5>
+                        <form class="form" action="model/add-event.php" method="post" role="form"
+                              autocomplete="off">
+                            <div class="form-group">
+                                <label for="eventName">Event Name</label>
+                                <input type="text" class="form-control" id="eventName" name="eventName">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventContent">Event Content</label>
+                                <textarea class="form-control" id="eventContent" name="eventContent"
+                                          rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventImage">Event Images</label>
+                                <input type="file" class="form-control-file" id="eventImage"
+                                       name="eventImage[]">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventCategory">Event Category</label>
+                                <select class="form-control" id="eventCategory" name="eventCategory">
+                                    <option selected>Entertainment</option>
+                                    <option>Hospitality</option>
+                                    <option>Travel</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="startDate">Event Date</label>
+                                <input type="date" class="form-control" id="startDate" name="startDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventUrl">URL</label>
+                                <input type="text" class="form-control" id="eventUrl" name="eventUrl">
+                                <label for="urlCaption">Caption</label>
+                                <input type="text" class="form-control" id="urlCaption" name="urlCaption">
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
+                        </form>
+                    </div>
                 </div>
 
                 <div id="locations">
@@ -169,47 +172,51 @@ Team: Remote Workers
                     </div>
 
                     <!-- Add Location Form -->
-                    <form class="form col-md-6" action="model/add-location.php" method="post" role="form"
-                          autocomplete="off">
-                        <div class="form-group">
-                            <label for="inputLocation">Search Place</label>
-                            <input type="text" class="form-control" id="inputLocation" name="inputLocation">
-                        </div>
+                    <div class="col-md-6">
+                        <h5>Location Form</h5>
+                        <form class="form" action="model/add-location.php" method="post" role="form"
+                              autocomplete="off">
+                            <div class="form-group">
+                                <label for="inputLocation">Search Place</label>
+                                <input type="text" class="form-control" id="inputLocation" name="inputLocation">
+                            </div>
 
-                        <!--Fill the address-->
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" name="country">
-                        </div>
-                        <div class="form-group">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" name="city">
-                        </div>
-                        <div class="form-group">
-                            <label for="state">State</label>
+                            <!--Fill the address-->
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" class="form-control" id="country" name="country">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" name="city">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State</label>
                                 <input type="text" class="form-control" name="state" id="state">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="latitude">Latitude</label>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="latitude">Latitude</label>
                                 <input type="text" class="form-control" name="latitude" id="latitude">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="longitude">Longitude</label>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="longitude">Longitude</label>
                                 <input type="text" class="form-control" name="longitude" id="longitude">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-lg float-right">
-                                Add Location
-                            </button>
-                        </div>
-                    </form>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-lg float-right">
+                                    Add Location
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
 
                 <div id="partners">
-
+                    <h1>Hi. I'm not here yet, but I will be soon!</h1>
                 </div>
             </div>
             <!-- End Main Content Div -->
@@ -261,6 +268,8 @@ Team: Remote Workers
         return false;
     });
 
+    // Populate the lists with events/locations/partners pulled from json
+
     // Click & activate a list item, then run populate function
     $('.list-group-item').click(function()
     {
@@ -269,7 +278,7 @@ Team: Remote Workers
     });
 
     // Populate Function
-    function populate()
+    function populateForm()
     {
         // Detect which list it's in
         // Find correct form
