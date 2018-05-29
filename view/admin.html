@@ -1,8 +1,8 @@
 <!--
-Author: Raine Padilla
-Date: 4/25/2018
-Updated: 5/14/2018
-Team: Remote Workers
+    Author: Raine Padilla
+      Date: 4/14/2018
+   Updated: 5/29/2018
+      Team: Remote Workers
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -28,12 +28,13 @@ Team: Remote Workers
 
 
 </head>
-<body class="h-100">
+<body>
 
+<!--NAVBAR-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
     <div class="row m-0 p-0 w-100 navNav">
-        <a class="navbar-brand font-weight-light col col-lg-4 mr-0" href="#">
-            AaronAviles.com
+        <a class="navbar-brand font-weight-light col col-lg-4 mr-0" href="./">
+            <strong>Aaron</strong>Aviles
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -54,176 +55,191 @@ Team: Remote Workers
                 <li class="nav-item">
                     <a class="nav-link p-0 mr-4 active" href="./admin">Admin</a>
                 </li>
-
             </ul>
-            <!--<form class="form-inline my-2 my-lg-0">-->
-            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-            <!--</form>-->
         </div>
     </div>
 </nav>
 
 <!-- Body Container Div -->
-<div class="container-fluid h-100 mx-0">
-    <!-- End Nav-->
+<div class="container mx-0">
+
     <!-- Main Content Row -->
-    <div class="row h-100">
+    <div class="row">
+
         <!-- Left Side Bar Column -->
-        <div class="col-3 h-100">
-            <!-- Left Side Bar Div -->
-            <div class="left-sidebar">
-                <!-- Left Side Bar Wrapper Div -->
-                <div class="left-sidebar-wrapper">
-                    <ul class="nav flex-column">
+        <div class="col-3 mt-3 list-group list-group-flush w-100">
 
+            <a href="#" class="list-group-item" id="viewEvents">
+                <i class="fas fa-list text-dark"></i>
+                <span class="nav-icon">Events</span>
+            </a>
 
-                        <li id="viewEvents" class="nav-item">
-                            <a href="">
-                                <i class="fas fa-list text-dark"></i> <span class="nav-icon">Events</span>
-                            </a>
-                        </li>
+            <a href="#" class="list-group-item" id="viewLocations">
+                <i class="fas fa-list text-dark"></i>
+                <span class="nav-icon">Locations</span>
+            </a>
 
-                        <li id="viewLocations" class="nav-item">
-                            <a href="">
-                                <i class="fas fa-list text-dark"></i> <span class="nav-icon">Locations</span>
-                            </a>
-                        </li>
-
-                        <li id="viewPartners" class="nav-item">
-                            <a href="">
-                                <i class="fas fa-list text-dark"></i> <span class="nav-icon">Partners</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End Left Side Bar Wrapper Div -->
-            </div>
-            <!-- End Left Side Bar Div -->
+            <a href="#" class="list-group-item" id="viewPartners">
+                <i class="fas fa-list text-dark"></i>
+                <span class="nav-icon">Partners</span>
+            </a>
         </div>
         <!-- End Side Bar Column -->
 
         <!-- Main Column -->
-        <div class="col-9 h-100">
-            <!-- Main Content Div -->
-            <div id="mainContent" class="main-content">
-                <div id="events">
-                    <!-- Event List -->
-                    <div class="col-md-6 float-right">
-                        <h5>Event List</h5>
-                        <div id="eventList" class="list-group">
-                            <a href="#" class="list-group-item active">First item</a>
-                            <a href="#" class="list-group-item">Second item</a>
-                            <a href="#" class="list-group-item">Third item</a>
+        <div class="col-9 container">
+
+            <!--Changing contents-->
+            <div class="row">
+
+                <!-- Event Form -->
+                <div class="col-6 container bg-light py-3" id="eventForm">
+                    <h5>Event Form</h5>
+                    <form class="form" action="model/add-event.php" method="post" role="form"
+                          autocomplete="off">
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <input type="text" class="form-control" id="eventName" name="eventName">
                         </div>
-                    </div>
-
-                    <!-- Event Form -->
-                    <div class="col-md-6">
-                        <h5>Event Form</h5>
-                        <form class="form" action="model/add-event.php" method="post" role="form"
-                              autocomplete="off">
-                            <div class="form-group">
-                                <label for="eventName">Event Name</label>
-                                <input type="text" class="form-control" id="eventName" name="eventName">
-                            </div>
-                            <div class="form-group">
-                                <label for="eventContent">Event Content</label>
-                                <textarea class="form-control" id="eventContent" name="eventContent"
-                                          rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="eventImage">Event Images</label>
-                                <input type="file" class="form-control-file" id="eventImage"
-                                       name="eventImage[]">
-                            </div>
-                            <div class="form-group">
-                                <label for="eventCategory">Event Category</label>
-                                <select class="form-control" id="eventCategory" name="eventCategory">
-                                    <option selected>Entertainment</option>
-                                    <option>Hospitality</option>
-                                    <option>Travel</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="startDate">Event Date</label>
-                                <input type="date" class="form-control" id="startDate" name="startDate">
-                            </div>
-                            <div class="form-group">
-                                <label for="eventUrl">URL</label>
-                                <input type="text" class="form-control" id="eventUrl" name="eventUrl">
-                                <label for="urlCaption">Caption</label>
-                                <input type="text" class="form-control" id="urlCaption" name="urlCaption">
-                            </div>
-                            <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
-                        </form>
-                    </div>
-                </div>
-
-                <div id="locations">
-                    <!-- Location List -->
-                    <div class="col-md-6 float-right">
-                        <h5>Event List</h5>
-                        <div id="locationList" class="list-group">
-                            <a href="#" class="list-group-item active">First item</a>
-                            <a href="#" class="list-group-item">Second item</a>
-                            <a href="#" class="list-group-item">Third item</a>
+                        <div class="form-group">
+                            <label for="eventContent">Event Content</label>
+                            <textarea class="form-control" id="eventContent" name="eventContent"
+                                      rows="3"></textarea>
                         </div>
-                    </div>
-
-                    <!-- Add Location Form -->
-                    <div class="col-md-6">
-                        <h5>Location Form</h5>
-                        <form class="form" action="model/add-location.php" method="post" role="form"
-                              autocomplete="off">
-                            <div class="form-group">
-                                <label for="inputLocation">Search Place</label>
-                                <input type="text" class="form-control" id="inputLocation" name="inputLocation">
-                            </div>
-
-                            <!--Fill the address-->
-                            <div class="form-group">
-                                <label for="country">Country</label>
-                                <input type="text" class="form-control" id="country" name="country">
-                            </div>
-                            <div class="form-group">
-                                <label for="city">City</label>
-                                <input type="text" class="form-control" id="city" name="city">
-                            </div>
-                            <div class="form-group">
-                                <label for="state">State</label>
-                                <input type="text" class="form-control" name="state" id="state">
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="latitude">Latitude</label>
-                                <input type="text" class="form-control" name="latitude" id="latitude">
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="longitude">Longitude</label>
-                                <input type="text" class="form-control" name="longitude" id="longitude">
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-lg float-right">
-                                    Add Location
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
+                        <div class="form-group">
+                            <label for="eventImage">Event Images</label>
+                            <input type="file" class="form-control-file" id="eventImage"
+                                   name="eventImage[]">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventCategory">Event Category</label>
+                            <select class="form-control" id="eventCategory" name="eventCategory">
+                                <option selected>Entertainment</option>
+                                <option>Hospitality</option>
+                                <option>Travel</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Event Date</label>
+                            <input type="date" class="form-control" id="startDate" name="startDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventUrl">URL</label>
+                            <input type="text" class="form-control" id="eventUrl" name="eventUrl">
+                            <label for="urlCaption">Caption</label>
+                            <input type="text" class="form-control" id="urlCaption" name="urlCaption">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
+                    </form>
                 </div>
 
-                <div id="partners">
-                    <h1>Hi. I'm not here yet, but I will be soon!</h1>
+                <!--Location form-->
+                <div class="col-6 container bg-light py-3" id="locationForm">
+                    <h5>Location Form</h5>
+                    <form class="form" action="model/add-location.php" method="post" role="form"
+                          autocomplete="off">
+                        <div class="form-group">
+                            <label for="inputLocation">Search Place</label>
+                            <input type="text" class="form-control" id="inputLocation" name="inputLocation">
+                        </div>
+
+                        <!--Fill the address-->
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control" id="country" name="country">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" name="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" name="state" id="state">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="latitude">Latitude</label>
+                            <input type="text" class="form-control" name="latitude" id="latitude">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude">Longitude</label>
+                            <input type="text" class="form-control" name="longitude" id="longitude">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-lg float-right">
+                                Add Location
+                            </button>
+                        </div>
+                    </form>
                 </div>
+
+                <!--Partners form-->
+                <div class="col-6 container bg-light py-3" id="partnersForm">
+                    <h5>Partners Form</h5>
+                    <form class="form" action="model/add-location.php" method="post" role="form"
+                          autocomplete="off">
+                        <div class="form-group">
+                            <label for="inputLocation">Search Place</label>
+                            <input type="text" class="form-control" id="inputLocation" name="inputLocation">
+                        </div>
+
+                        <!--Fill the address-->
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control" id="country" name="country">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" name="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" name="state" id="state">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="latitude">Latitude</label>
+                            <input type="text" class="form-control" name="latitude" id="latitude">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude">Longitude</label>
+                            <input type="text" class="form-control" name="longitude" id="longitude">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-lg float-right">
+                                Add Location
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!--Changing list-->
+                <div class="col-6 container bg-light py-3">
+                    <div class="list-group">
+                        <a class="list-group-item">
+                            First item
+                        </a>
+                        <a class="list-group-item">
+                            Second item
+                        </a>
+                        <a class="list-group-item">
+                            Third item
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <!-- End Main Content Div -->
+
         </div>
         <!-- End Main Column -->
+
     </div>
     <!-- End Main Content Row -->
+
 </div>
 <!-- End Body Container -->
 
@@ -240,31 +256,31 @@ Team: Remote Workers
 <script>
 
     // Hide each element until the corresponding sidebar button is clicked
-    $('#events').hide();
-    $('#locations').hide();
-    $('#partners').hide();
+    $('#eventForm').show();
+    $('#locationForm').hide();
+    $('#partnersForm').hide();
 
     // Show events
     $('#viewEvents').click(function() {
-        $('#locations').hide();
-        $('#partners').hide();
-        $('#events').show();
+        $('#eventForm').show();
+        $('#locationForm').hide();
+        $('#partnersForm').hide();
         return false;
     });
 
     // Show locations
     $('#viewLocations').click(function() {
-        $('#events').hide();
-        $('#partners').hide();
-        $('#locations').show();
+        $('#eventForm').hide();
+        $('#locationForm').show();
+        $('#partnersForm').hide();
         return false;
     });
 
     // Show partners
     $('#viewPartners').click(function() {
-        $('#locations').hide();
-        $('#events').hide();
-        $('#partners').show();
+        $('#eventForm').hide();
+        $('#locationForm').hide();
+        $('#partnersForm').show();
         return false;
     });
 
@@ -284,7 +300,6 @@ Team: Remote Workers
         // Find correct form
         // Populate fields from correct json file into the form
     }
-
 
 </script>
 </body>
