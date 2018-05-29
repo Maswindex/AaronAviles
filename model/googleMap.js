@@ -1,51 +1,24 @@
-"use strict";
-var locations = [
-    {
-        position: {
-            lat: 34.0430,
-            lng: -118.2673
-        }, events: [
-            'Outdoors exploring inner peace.',
-            'It was an amazing experience at CG Technology Event.',
-            'Exploring the sky with a Drone',
-            'First Meeting',
-            'Where it all Begin'
-        ],
-        title: 'LAStadium'
-    },
-    {
-        position: {
-            lat: 36.1162,
-            lng: -115.1745
-        }, events: [
-            'It was an amazing experience at CG Technology Event.',
-            'Exploring the sky with a Drone',
-            'Where it all Begin'
-        ],
-        title: 'VegasDay'
-    },
-    {
-        position: {
-            lat: 47.6205,
-            lng: -122.3493
-        }, events: [
-            'First Meeting',
-            'Where it all Begin'
-        ],
+/*
+ *        author: Mason Hernandez
+ *       version: 1.0
+ *      creation: 05/12/2018
+ *     last edit: 05/29/2018
+ *     file name: googleMap.js
+ *   description: file builds the necessary functions and
+ *                markers in google map to be displayed
+ */
 
-        title: 'SpaceNeedle'
-    },
-    {
-        position: {
-            lat: 40.7128,
-            lng: -74.0060
-        },
-        title: 'New York'
-    }
-];
-var relatedEvents = [];
+"use strict";
+var locations = [];
+var events = {};
+
+/*  Callback for Google Map API
+    starts the program          */
 function myMap()
 {
+    fillLocations();
+    fillEvents();
+
     var markers = [];
     var mapCanvas = document.getElementById("map");
     var mapOptions = {
@@ -65,18 +38,56 @@ function myMap()
 
         //add listeners to each to display modal
         ).addListener('click', function () {
-
-            //alert(displayEvents(this.title));
             displayEvents(this.title);
         });
     }
 }
 
+//fills locations with locations from the json file
+function fillLocations()
+{
+    locations = function () {
+        var tmp = null;
+        $.ajax({
+            'async': false,
+            'type': "POST",
+            'global': false,
+            'dataType': 'json',
+            'url': "model/locations.json",
+            'success': function (data) {
+                tmp = data;
+            }
+        });
+        return tmp;
+    }();
+}
+
+//fills events with events from the json file
+function fillEvents()
+{
+    events = function () {
+        var tmp = null;
+        $.ajax({
+            'async': false,
+            'type': "POST",
+            'global': false,
+            'dataType': 'json',
+            'url': "model/test_events.json",
+            'success': function (data) {
+                tmp = data.events;
+            }
+        });
+        return tmp;
+    }();
+}
+
+//activated when a marker is clicked on
 function displayEvents(locationTitle)
 {
-    var locationEvents = [];
-    var track = 0;
-    var locIndex;
+    var locEventTitles;
+
+    //clear the modal
+    $("#eventList").html("");
 
     //loop through all location objects
     for (var i = 0; i < locations.length; i++)
@@ -84,50 +95,95 @@ function displayEvents(locationTitle)
         //when the location with the passed title is found
         if (locations[i].title == locationTitle)
         {
-            //log the index
-            locIndex = i;
+            //log the related events
+            locEventTitles = locations[i].events;
+
+            //exit the loop
             i = locations.length;
         }
     }
 
-    //all events stored in the target location
-    var locEventTitles = locations[locIndex].events;
-    var event;
-
-    $.getJSON("model/test_events.json", function(json){
-        console.log(json.events);
-        $("#eventList").html("");
-
-        for (var i = 0; i < json.events.length; i++) {
-            //totalEvents[i] = json.events[i];
-            //addRelated(json.events[i]);
-            event = json.events[i];
-            //loops through events in target location
-            for (var j = 0; j < locEventTitles.length; j++)
+    //loop through all events
+    for (var i = 0; i < events.length; i++)
+    {
+        //loops through events in target location
+        for (var j = 0; j < locEventTitles.length; j++)
+        {
+            // if the event headline matches the event
+            // title passed by the location
+            if (events[i].text.headline == locEventTitles[j])
             {
-                // if the event headline matches the event
-                // title passed by the location matches
-                if (event.text.headline == locEventTitles[j])
-                {
-                    $("#eventList").append(
-                        "<a href='#' class='list-group-item list-group-item-action flex-column align-items-start event' id='e"+i+"'>"+
-                            "<div class='d-flex w-100 justify-content-between'" +
-                                "<h5 class='mb-1'>" + event.text.headline + "</h5>" +
-                                "<small>" +
-                                    event.start_date.month + "/" +
-                                    event.start_date.day + "/" +
-                                    event.start_date.year +
-                                "</small>" +
-                            "</div>" +
-                            "<p class='mb-1'>" + event.text.text.substr(0, 50) + "...</p>" +
-                        "</a>"
-                    );
-                    //$("#e"+i).append(event.headline);
-                }
+                //add that event to the modal
+                addEventToModal(i);
             }
         }
+        $("#relatedEvents").modal();
+    }
+}
 
-        $("#exampleModal").modal();
+//adds one of related events to modal
+function addEventToModal(index)
+{
+    var event = events[index];
+    var date = createDate(event.start_date);
 
+    //creates the list item for the related events
+    $("#eventList").append(
+        "<a href='#' class='list-group-item list-group-item-action flex-column align-items-start event' id='e"+index+"'>"+
+        "<div class='d-flex w-100 justify-content-between'>" +
+            "<h5 class='mb-1'>" + event.text.headline + "</h5>" +
+            "<small>" + date + "</small>" +
+        "</div>" +
+        "<p class='mb-1'>" + event.text.text.substr(0, 50) + "...</p>" +
+        "</a>"
+    );
+
+    //creates the listeners for the displayed events
+    $("#e"+index).click(function () {
+        var headline = $(this).children("div").children("h5").text();
+        displayEvent(headline);
     });
+}
+
+//reads the different date inputs to display properly
+function createDate(start_date)
+{
+    var date = "";
+
+    if (start_date.year != null) {
+        date = start_date.year;
+
+        if (start_date.month != null) {
+
+            if (start_date.day != null) {
+                date = start_date.month + "/" +
+                       start_date.day + "/" +
+                       date;
+            } else {
+                date = start_date.month + "/" +
+                       date;
+            }
+        }
+    }
+
+    return date;
+}
+
+/*  Displays the event in the selected event modal
+    Activates when clicked on in modal              */
+function displayEvent(eventHeadline)
+{
+    var event;
+
+    for (var i = 0; i < events.length; i++)
+    {
+        event = events[i];
+
+        if (event.text.headline == eventHeadline)
+        {
+            $("#eventTitle").html(event.text.headline);
+            $("#eventText").html(event.text.text);
+        }
+    }
+    $("#selectedEvent").modal();
 }
