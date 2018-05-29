@@ -26,8 +26,6 @@ function autoCompleteLocation() {
         //get the response array of Google API
         var responseLocation = autocomplete.getPlaces();
 
-
-
         //Fill in the generated form
 
         //get latitude Value - Set it

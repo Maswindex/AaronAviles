@@ -1,4 +1,4 @@
-// google.maps.event.addDomListener(window, 'load', test);
+google.maps.event.addDomListener(window, 'load', test);
 
 //Location Creater
 function test() {
