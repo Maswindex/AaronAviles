@@ -1,7 +1,3 @@
-/**
- * Mason hernandez marker + map API
- *
- */
 "use strict";
 var locations = [
     {
@@ -47,7 +43,7 @@ var locations = [
         title: 'New York'
     }
 ];
-
+var relatedEvents = [];
 function myMap()
 {
     var markers = [];
@@ -94,30 +90,27 @@ function displayEvents(locationTitle)
         }
     }
 
-    //grab all events from the events
-    var totalEvents;
-    $.getJSON("model/test_events.json", function(json) {
-        console.log(json);
-    });
-
+    //all events stored in the target location
     var locEventTitles = locations[locIndex].events;
     var event;
 
-    //loops through events contained in the location
-    for (var i = 0; i < locEventTitles.length; i++)
-    {
-        //loop through all the events to find the
-        //full event based on passed title
-        for (var j = 0; j < totalEvents.length; j++)
-        {
-            event = totalEvents[j].text;
+    $.getJSON("model/test_events.json", function(json){
+        console.log(json.events);
 
-            // if the event headline matches the event
-            // title passed by the location matches
-            if (event.headline == locEventTitles[i])
+        for (var i = 0; i < json.events.length; i++) {
+            //totalEvents[i] = json.events[i];
+            //addRelated(json.events[i]);
+            event = json.events[i].text;
+            //loops through events in target location
+            for (var j = 0; j < locEventTitles.length; j++)
             {
-                alert(event.text);
+                // if the event headline matches the event
+                // title passed by the location matches
+                if (event.headline == locEventTitles[j])
+                {
+                    alert(event.text);
+                }
             }
         }
-    }
+    });
 }
