@@ -1,5 +1,5 @@
 <!--
-    Author: Raine Padilla
+    Author: Raine Padilla | Toygan Sevim
       Date: 4/14/2018
    Updated: 5/29/2018
       Team: Remote Workers
@@ -17,9 +17,6 @@
             crossorigin="anonymous"></script>
 
 
-    <script src="../model/locationCreate.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
-            async defer></script>
     <style>
         html, body {
             height: 100% !important;
@@ -136,7 +133,7 @@
                 <!--Location form-->
                 <div class="col-6 container bg-light py-3" id="locationForm">
                     <h5>Location Form</h5>
-                    <form class="form" action="model/add-location.php" method="post" role="form"
+                    <form class="form" action="#" method="post" role="form"
                           autocomplete="off">
                         <div class="form-group">
                             <label for="inputLocation">Search Place</label>
@@ -168,7 +165,7 @@
                             </label>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-lg float-right">
+                            <button type="submit" class="btn btn-success btn-lg float-right" id="locationAddButton">
                                 Add Location
                             </button>
                         </div>
@@ -178,35 +175,35 @@
                 <!--Partners form-->
                 <div class="col-6 container bg-light py-3" id="partnersForm">
                     <h5>Partners Form</h5>
-                    <form class="form" action="model/add-location.php" method="post" role="form"
+                    <form class="form" action="#" method="post" role="form"
                           autocomplete="off">
                         <div class="form-group">
                             <label for="inputLocation">Search Place</label>
-                            <input type="text" class="form-control" id="inputLocation" name="inputLocation">
+                            <input type="text" class="form-control" name="inputLocation">
                         </div>
 
                         <!--Fill the address-->
                         <div class="form-group">
                             <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" name="country">
+                            <input type="text" class="form-control" name="country">
                         </div>
                         <div class="form-group">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" name="city">
+                            <input type="text" class="form-control" name="city">
                         </div>
                         <div class="form-group">
                             <label for="state">State</label>
-                            <input type="text" class="form-control" name="state" id="state">
+                            <input type="text" class="form-control" name="state">
                             </label>
                         </div>
                         <div class="form-group">
                             <label for="latitude">Latitude</label>
-                            <input type="text" class="form-control" name="latitude" id="latitude">
+                            <input type="text" class="form-control" name="latitude">
                             </label>
                         </div>
                         <div class="form-group">
                             <label for="longitude">Longitude</label>
-                            <input type="text" class="form-control" name="longitude" id="longitude">
+                            <input type="text" class="form-control" name="longitude">
                             </label>
                         </div>
                         <div class="form-group">
@@ -243,9 +240,9 @@
 </div>
 <!-- End Body Container -->
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
@@ -253,8 +250,17 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+
+<script src="js/locationCreate.js" type="application/json"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
+        async defer></script>
+
+
 <!-- Populate lists script -->
 <script>
+
 
     // Hide each element until the corresponding sidebar button is clicked
     $('#eventForm').show();
@@ -262,7 +268,7 @@
     $('#partnersForm').hide();
 
     // Show events
-    $('#viewEvents').click(function() {
+    $('#viewEvents').click(function () {
 
         $('#eventForm').show();
         $('#locationForm').hide();
@@ -273,7 +279,7 @@
     });
 
     // Show locations
-    $('#viewLocations').click(function() {
+    $('#viewLocations').click(function () {
         $('#eventForm').hide();
         $('#locationForm').show();
         $('#partnersForm').hide();
@@ -283,7 +289,7 @@
     });
 
     // Show partners
-    $('#viewPartners').click(function() {
+    $('#viewPartners').click(function () {
         $('#eventForm').hide();
         $('#locationForm').hide();
         $('#partnersForm').show();
@@ -295,15 +301,13 @@
     // Populate the lists with events/locations/partners pulled from json
 
     // Click & activate a list item, then run populate function
-    $('.list-group-item').click(function()
-    {
+    $('.list-group-item').click(function () {
         $('.list-group-item.active').removeClass('active');
         $(this).addClass('active');
     });
 
     // Populate Function
-    function populateForm()
-    {
+    function populateForm() {
         // Detect which list it's in
         // Find correct form
         // Populate fields from correct json file into the form
