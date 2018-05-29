@@ -96,21 +96,38 @@ function displayEvents(locationTitle)
 
     $.getJSON("model/test_events.json", function(json){
         console.log(json.events);
+        $("#eventList").html("");
 
         for (var i = 0; i < json.events.length; i++) {
             //totalEvents[i] = json.events[i];
             //addRelated(json.events[i]);
-            event = json.events[i].text;
+            event = json.events[i];
             //loops through events in target location
             for (var j = 0; j < locEventTitles.length; j++)
             {
                 // if the event headline matches the event
                 // title passed by the location matches
-                if (event.headline == locEventTitles[j])
+                if (event.text.headline == locEventTitles[j])
                 {
-                    alert(event.text);
+                    $("#eventList").append(
+                        "<a href='#' class='list-group-item list-group-item-action flex-column align-items-start event' id='e"+i+"'>"+
+                            "<div class='d-flex w-100 justify-content-between'" +
+                                "<h5 class='mb-1'>" + event.text.headline + "</h5>" +
+                                "<small>" +
+                                    event.start_date.month + "/" +
+                                    event.start_date.day + "/" +
+                                    event.start_date.year +
+                                "</small>" +
+                            "</div>" +
+                            "<p class='mb-1'>" + event.text.text.substr(0, 50) + "...</p>" +
+                        "</a>"
+                    );
+                    //$("#e"+i).append(event.headline);
                 }
             }
         }
+
+        $("#exampleModal").modal();
+
     });
 }
