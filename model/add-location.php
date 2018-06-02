@@ -20,7 +20,7 @@
 
 //See if the post is submitted correctly
 echo "connect";
-if(!isset($_POST['submit']) && empty($_POST['latitude']) || empty($_POST['longitude']))
+if(!isset($_POST['submit']))
 {
 
     //redirect back
@@ -28,18 +28,39 @@ if(!isset($_POST['submit']) && empty($_POST['latitude']) || empty($_POST['longit
 } else
 {
 
+    print_r($_POST);
 
     //get the ltn lng as variable
-    $longitute = $_POST['longitude'];
-    $langitude = $_POST['latitude'];
+    //    $longitute = $_POST['longitude'];
+    //    $langitude = $_POST['latitude'];
 
 
     //2 most important are Lang, Long - see if they are empty
-    if(isset($longitute) && isset($langitude))
+    if(isset($longitute) && isset($langitude) || true)
     {
 
         //Data is clear ready to parse and json
         //format our data into required format
+
+        print_r($event);
+
+
+        // Pull the contents of the events.json file
+        $file = file_get_contents("locations.json");
+
+        // Create a temporary array to hold all events
+        $tempEvent = json_decode($file, true);
+
+
+
+        $newLocation = json_encode($tempEvent, JSON_PRETTY_PRINT);
+
+        // make sure the file is writable
+        // if it is, write the temporary array back into the file.
+        if(is_writable('locations.json'))
+        {
+            file_put_contents('locations.json', $newLocation);
+        }
 
 
     }

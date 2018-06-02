@@ -1,0 +1,80 @@
+body, html {
+    min-height: 100%;
+}
+
+.bg {
+    /* The image used */
+    /*background-image: url("../images/wood_background.jpg");*/
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background: linear-gradient(to top left, #6c757d, #1d242b) no-repeat center;
+    background-size: cover;
+}
+
+.user-login-box {
+    opacity: .5;
+}
+
+#head {
+    /*background: inherit;*/
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: -2px 1px 12px 8px rgba(24, 29, 33, 0.15)
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img.logo-control {
+    width: 50%;
+    height: 50%;
+
+}
+
+form {
+    width: 100%
+}
+
+input#username, input#email, input#pass, input#repeat-pass {
+    background: rgba(255, 255, 255, 0.16);
+    max-width: 100%;
+    width: 100%;
+}
+
+#body {
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#foot {
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: -2px 1px 12px 8px rgba(24, 29, 33, 0.15)
+}
+
+input#signup {
+    border: none !important;
+    background: none !important;
+}
+
+input#login {
+    border: none !important;
+    background: none !important;
+}
+
+a#return:hover {
+    text-decoration: none !important;
+}
+
+.link-style-none {
+    text-decoration: none !important;
+}
+
+a.clear-text:hover {
+    color: white;
+}

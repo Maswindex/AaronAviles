@@ -335,6 +335,7 @@ function test() {
                     console.log(locationObject);
 
                     console.log("Before::");
+
                     console.log(result);
 
                     result.push(locationObject);
@@ -342,7 +343,7 @@ function test() {
 
                     mapLocations = JSON.stringify(result);
 
-                    console.log(mapLocations);
+                    console.log("MAP: " + mapLocations);
 
                     console.log("Added");
                     console.log(result);
@@ -350,6 +351,12 @@ function test() {
                     //send to php to grab the data
                     // $.post()
 
+                    $.post("http://tsevim.greenriverdev.com/355/AaronAviles/view/js/test.php",{location:locationObject} ,function (data, status) {
+                        // alert("Data: " + data + "\nStatus: " + status);
+                        alert(locationObject.position.lat +
+                            "\n" + locationObject.position.lng + "\n" +
+                            locationObject.title);
+                    });
 
                 }
 

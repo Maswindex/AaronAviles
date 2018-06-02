@@ -36,6 +36,21 @@ $f3->route('GET|POST /admin', function ($f3)
 });
 
 
+$f3->route('GET|POST /login', function ($f3)
+{
+    $view = new View();
+
+    $aaronTitle = "Aaron Aviles";
+
+    $adminValid = "Toyan";
+    require_once "model/aaronLogin.php";
+
+
+    $f3->set('title', $aaronTitle);
+    echo $view->render('view/login.html');
+});
+
+
 //location upload
 $f3->route('POST|GET /admin/locationAdd', function ($f3)
 {
