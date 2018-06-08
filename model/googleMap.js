@@ -25,10 +25,10 @@ function myMap() {
             lat: 39.8283,
             lng: -98.5795
         },
-        zoom:2
+        zoom: 2
     };
     var map = new google.maps.Map(mapCanvas, mapOptions);
-    google.maps.event.addListenerOnce(map, 'idle', function(){
+    google.maps.event.addListenerOnce(map, 'idle', function () {
         // do something only the first time the map is loaded
         $(".gmnoprint").addClass("marker-parent");
 
@@ -79,7 +79,7 @@ function fillLocations() {
             'dataType': 'json',
             'url': "model/locations.json",
             'success': function (data) {
-                tmp = data;
+                tmp = data.locations;
             }
         });
         return tmp;
@@ -200,6 +200,6 @@ function displayEvent(eventHeadline) {
     $("#selectedEvent").modal();
 }
 
-$("document").ready(function(){
+$("document").ready(function () {
     $(".gmnoprint").addClass("marker-parent");
 });

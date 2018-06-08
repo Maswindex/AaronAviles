@@ -1,50 +1,40 @@
-[
-  {
-    "position": {
-      "lat": 34.0430,
-      "lng": -118.2673
-    },
-    "events": [
-      "Outdoors exploring inner peace.",
-      "It was an amazing experience at CG Technology Event.",
-      "Exploring the sky with a Drone",
-      "First Meeting",
-      "Where it all Begin"
-    ],
-    "title": "LAStadium",
-    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg"
-  },
-  {
-    "position": {
-      "lat": 36.1162,
-      "lng": -115.1745
-    },
-    "events": [
-      "It was an amazing experience at CG Technology Event.",
-      "Exploring the sky with a Drone",
-      "Where it all Begin"
-    ],
-    "title": "VegasDay",
-    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg"
-  },
-  {
-    "position": {
-      "lat": 47.6205,
-      "lng": -122.3493
-    },
-    "events": [
-      "First Meeting",
-      "Where it all Begin"
-    ],
-    "title": "SpaceNeedle",
-    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg"
-  },
-  {
-    "position": {
-      "lat": 40.7128,
-      "lng": -74.0060
-    },
-    "title": "New York",
-    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg"
-  }
-]
+{
+    "locations": [
+        {
+            "position": {
+                "lat": 47.3408311,
+                "lng": -122.2378483
+            },
+            "events": [],
+            "title": "ADESA Seattle",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.3408311,
+                "lng": -122.2378483
+            },
+            "events": [],
+            "title": "ADESA Seattle",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.3287465,
+                "lng": -122.2208888
+            },
+            "events": [],
+            "title": "Advance Auto Parts",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.3287465,
+                "lng": -122.2208888
+            },
+            "events": [],
+            "title": "Advance Auto Parts",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        }
+    ]
+}

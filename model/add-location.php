@@ -30,11 +30,35 @@ if(!isset($_POST['postLocation']))
 
     // make sure the file is writable
     // if it is, write the temporary array back into the file.
+    //    if(is_writable('locations.json'))
+    //    {
+    //
+    //        file_put_contents('locations.json', $jsonFile);
+    //    }
+
+    // Pull the contents of the events.json file
+    $file = file_get_contents("locations.json");
+
+    // Create a temporary array to hold all events
+    $templocations = json_decode($file, true);
+
+    // Add the new event to the events array
+    array_push($templocations['locations'], $jsonFile);
+
+    //    echo print_r($templocations);
+
+    $prettylocations = json_encode($templocations, JSON_PRETTY_PRINT);
+
+
+    echo '<pre>' . print_r($prettylocations) . '</pre>';
+
+    // make sure the file is writable
+    // if it is, write the temporary array back into the file.
     if(is_writable('locations.json'))
     {
-
-        file_put_contents('locations.json', $jsonFile);
+        file_put_contents('locations.json', $prettylocations);
     }
+
 
 }
 

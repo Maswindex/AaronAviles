@@ -23,7 +23,10 @@ function test() {
 
         //autocomplete return
         var place = autocomplete.getPlace();
+
         var jsonString = JSON.stringify(place.geometry);
+
+
         console.log(jsonString);
         //update the file
         // updateJsonFile(place);
@@ -55,7 +58,23 @@ function test() {
 
 
         //Use the uploaded image path / URL
-        locationObject.icon = "";
+        locationObject.icon = "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg";
+        console.log("Location object BEFORE:" + locationObject);
+
+        locationObject = JSON.stringify(locationObject);
+
+        $.post('././model/add-location.php',
+            {
+                postLocation: true,
+                location: locationObject
+            },
+
+            function (results) {
+
+                console.log("after post : <br>" + results);
+
+
+            });
 
 
         //display on screen
@@ -74,55 +93,83 @@ function test() {
         var jsonURL = "./view/json/mapLocations.json";
         // locationObject.position = place.geometry.location.lat();
 
+        // var locations = getLocations();
+
         //Recieve the current local Locations file to push the recieved changes
-        var json = (function () {
-            var json = null;
-            $.ajax({
-                url: jsonURL,
-                async: true,
-                success: function (result) {
-                    // console.log(locationObject);
-                    //
-                    // console.log("Before::");
-                    // console.log(result);
-
-                    result.push(locationObject);
-
-
-                    mapLocations = JSON.stringify(result);
-                    //this is good enough to send to server
-                    $.post('././model/add-location.php',
-                        {
-                            postLocation: true,
-                            location: mapLocations
-                        },
-
-                        function (results) {
-
-                            console.log("after post : <br>" + results);
-                        });
-
-                    console.log("PUSHED CONTENT" + mapLocations);
-
-
-                },
-                error: function (result) {
-
-                    $("span.location_error").html("<p class='text-danger'>Error Occured while loading to file</p><br><p class='text-danger text-uppercase'>Try Again!</p>");
-                    console.log("Error openning file path: File can not be reached");
-
-
-                }
-
-
-            });
-
-            console.log("This is json" + json);
-            return json;
-        })();
-
-        console.log("This is json" + json);
+        // var json = (function () {
+        //
+        //     var json = null;
+        //
+        //
+        //     $.ajax(
+        //         {
+        //             url: jsonURL,
+        //             async: true,
+        //             success: function (result) {
+        //                 // console.log(locationObject);
+        //                 // //
+        //                 // console.log("Before::");
+        //                 // console.log(result);
+        //
+        //                 result.push(locationObject);
+        //
+        //                 // locationObject =
+        //
+        //                 // mapLocations = JSON.stringify(result);
+        //
+        //                 console.log("Location object" + locationObject);
+        //
+        //                 //this is good enough to send to server
+        //                 $.post('././model/add-location.php',
+        //                     {
+        //                         postLocation: true,
+        //                         location: locationObject
+        //                     },
+        //
+        //                     function (results) {
+        //
+        //                         console.log("after post : <br>" + results);
+        //
+        //
+        //                     });
+        //
+        //                 // console.log("PUSHED CONTENT" + mapLocations);
+        //
+        //
+        //             },
+        //             error: function (result) {
+        //
+        //                 $("span.location_error").html("<p class='text-danger'>Error Occured while loading to file</p><br><p class='text-danger text-uppercase'>Try Again!</p>");
+        //                 console.log("Error openning file path: File can not be reached");
+        //
+        //
+        //             }
+        //         });
+        //
+        //     return json;
+        //
+        //
+        // })();
 
 
     }
-}
+}//fills locations with locations from the json file
+
+
+// function getLocations() {
+//     var tmp = null;
+//
+//     $.ajax({
+//         'async': false,
+//         'type': "POST",
+//         'global': false,
+//         'dataType': 'json',
+//         'url': "model/mapLocations.json",
+//         'success': function (data) {
+//             tmp = data;
+//         }
+//     });
+//
+//     return tmp;
+// }
+
