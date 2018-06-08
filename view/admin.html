@@ -50,7 +50,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-0 mr-4 active" href="./admin">Admin</a>
+                    <a class="nav-link p-0 mr-4 active" href="./logout">Logout</a>
                 </li>
             </ul>
         </div>
@@ -132,7 +132,8 @@
 
                 <!--Location form-->
                 <div class="col-6 container bg-light py-3" id="locationForm">
-                    <h5>Location Form</h5>
+                    <h5 class="divider">Location Form</h5>
+                    <span class="location_error text-danger"></span>
                     <form class="form" action="#" method="post" role="form"
                           autocomplete="off">
                         <div class="form-group">
@@ -142,30 +143,44 @@
 
                         <!--Fill the address-->
                         <div class="form-group">
-                            <label for="country">Country</label>
+                            <label for="country">Info</label>
                             <input type="text" class="form-control" id="country" name="country">
                         </div>
-                        <div class="form-group">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" name="city">
+
+                        <h5 class="divider">Related Events</h5>
+
+
+                        <div class="dropdown mb-5">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="state">State</label>
-                            <input type="text" class="form-control" name="state" id="state">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="latitude">Latitude</label>
-                            <input type="text" class="form-control" name="latitude" id="latitude">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="longitude">Longitude</label>
-                            <input type="text" class="form-control" name="longitude" id="longitude">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-lg float-right" id="locationAddButton">
+
+                        <!--<div class="form-group">-->
+                        <!--<label for="city">City</label>-->
+                        <!--<input type="text" class="form-control" id="city" name="city">-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                        <!--<label for="state">State</label>-->
+                        <!--<input type="text" class="form-control" name="state" id="state">-->
+                        <!--</label>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                        <!--<label for="latitude">Latitude</label>-->
+                        <!--<input type="text" class="form-control" name="latitude" id="latitude">-->
+                        <!--</label>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                        <!--<label for="longitude">Longitude</label>-->
+                        <!--<input type="text" class="form-control" name="longitude" id="longitude">-->
+                        <!--</label>-->
+                        <!--</div>-->
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-success btn-lg" id="locationAddButton">
                                 Add Location
                             </button>
                         </div>
@@ -252,183 +267,12 @@
         crossorigin="anonymous"></script>
 
 
-<!--<script src="js/locationCreate.js" type="application/json"></script>-->
+<script src="./view/js/locationCreate.js" type="application/javascript"></script>
 
-<script>google.maps.event.addDomListener(window, 'load', test);
-
-//Location Creater
-function test() {
-    //display of the form
-    //This will hold the information to append to the local file
-
-    const location =
-        {
-            latitude: document.getElementById('latitude'),
-            longitude: document.getElementById('longitude'),
-            city: document.getElementById('city'),
-            state: document.getElementById('state'),
-            country: document.getElementById('country')
-        };
-    //search bar for new location
-    var input = document.getElementById('inputLocation');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-
-
-    //START THE FUNCTION as the place selected - get the data's
-    google.maps.event.addListener(autocomplete, 'place_changed', function () {
-
-        //autocomplete return
-        var place = autocomplete.getPlace();
-        var jsonString = JSON.stringify(place.geometry);
-        console.log(jsonString);
-        //update the file
-
-
-        $("#locationAddButton").on("click", function () {
-
-            event.preventDefault();
-
-            updateJsonFile(place);
-
-        });
-
-
-    });
-
-
-    //this function will display the results of the search on screen and then will update
-    //the location Json file with the appended new location
-    function updateJsonFile(place) {
-
-        //to hold the json format and easier append
-        var locationObject = new Object();
-        locationObject.position = {};
-        locationObject.position.lat = place.geometry.location.lat();
-        locationObject.position.lng = place.geometry.location.lng();
-        locationObject.events = [];
-        locationObject.title = place.name;
-
-
-        //display on screen
-        location.latitude.value = place.geometry.location.lat();
-        location.city.value = place.name;
-        location.longitude.value = place.geometry.location.lng();
-        location.country.value = place.formatted_address;
-        location.state.value = place.address_components[2].short_name;
-
-
-        //this is the array of all locations in the map
-        var mapLocations;
-
-
-        //Json request URL
-        var jsonURL = "http://tsevim.greenriverdev.com/355/AaronAviles/view/json/mapLocations.json";
-        // locationObject.position = place.geometry.location.lat();
-
-        //Recieve the current local Locations file to push the recieved changes
-        var json = (function () {
-            var json = null;
-            $.ajax({
-                url: jsonURL,
-                async: true,
-                success: function (result) {
-                    console.log(locationObject);
-
-                    console.log("Before::");
-
-                    console.log(result);
-
-                    result.push(locationObject);
-
-
-                    mapLocations = JSON.stringify(result);
-
-                    console.log("MAP: " + mapLocations);
-
-                    console.log("Added");
-                    console.log(result);
-
-                    //send to php to grab the data
-                    // $.post()
-
-                    $.post("http://tsevim.greenriverdev.com/355/AaronAviles/view/js/test.php",{location:locationObject} ,function (data, status) {
-                        // alert("Data: " + data + "\nStatus: " + status);
-                        alert(locationObject.position.lat +
-                            "\n" + locationObject.position.lng + "\n" +
-                            locationObject.title);
-                    });
-
-                }
-
-
-            });
-            return json;
-        })();
-
-        console.log("This is json" + json);
-
-
-    }
-}</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
         async defer></script>
 
-
 <!-- Populate lists script -->
-<script>
-
-
-    // Hide each element until the corresponding sidebar button is clicked
-    $('#eventForm').show();
-    $('#locationForm').hide();
-    $('#partnersForm').hide();
-
-    // Show events
-    $('#viewEvents').click(function () {
-
-        $('#eventForm').show();
-        $('#locationForm').hide();
-        $('#partnersForm').hide();
-
-        populateList($this);
-        return false;
-    });
-
-    // Show locations
-    $('#viewLocations').click(function () {
-        $('#eventForm').hide();
-        $('#locationForm').show();
-        $('#partnersForm').hide();
-
-        populateList($this);
-        return false;
-    });
-
-    // Show partners
-    $('#viewPartners').click(function () {
-        $('#eventForm').hide();
-        $('#locationForm').hide();
-        $('#partnersForm').show();
-
-        populateList($this);
-        return false;
-    });
-
-    // Populate the lists with events/locations/partners pulled from json
-
-    // Click & activate a list item, then run populate function
-    $('.list-group-item').click(function () {
-        $('.list-group-item.active').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    // Populate Function
-    function populateForm() {
-        // Detect which list it's in
-        // Find correct form
-        // Populate fields from correct json file into the form
-    }
-
-</script>
+<script src="./view/js/adminNavigation.js" type="application/javascript"></script>
 </body>
 </html>

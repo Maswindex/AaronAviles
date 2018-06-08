@@ -14,8 +14,7 @@ var events = {};
 
 /*  Callback for Google Map API
     starts the program          */
-function myMap()
-{
+function myMap() {
     fillLocations();
     fillEvents();
 
@@ -34,6 +33,7 @@ function myMap()
         $(".gmnoprint").addClass("marker-parent");
 
     });
+    //For every location object, create a marker, add a event listener -click, to display related items
     //create each marker
     for (var i = 0; i < locations.length; i++) {
         markers[i] = new google.maps.Marker(
@@ -59,7 +59,7 @@ function myMap()
                 map: map
             }
 
-        //add listeners to each to display modal
+            //add listeners to each to display modal
         ).addListener('click', function () {
             displayEvents(this.title);
         });
@@ -69,8 +69,7 @@ function myMap()
 }
 
 //fills locations with locations from the json file
-function fillLocations()
-{
+function fillLocations() {
     locations = function () {
         var tmp = null;
         $.ajax({
@@ -88,8 +87,7 @@ function fillLocations()
 }
 
 //fills events with events from the json file
-function fillEvents()
-{
+function fillEvents() {
     events = function () {
         var tmp = null;
         $.ajax({
@@ -107,19 +105,16 @@ function fillEvents()
 }
 
 //activated when a marker is clicked on
-function displayEvents(locationTitle)
-{
+function displayEvents(locationTitle) {
     var locEventTitles;
 
     //clear the modal
     $("#eventList").html("");
 
     //loop through all location objects
-    for (var i = 0; i < locations.length; i++)
-    {
+    for (var i = 0; i < locations.length; i++) {
         //when the location with the passed title is found
-        if (locations[i].title == locationTitle)
-        {
+        if (locations[i].title == locationTitle) {
             //log the related events
             locEventTitles = locations[i].events;
 
@@ -129,15 +124,12 @@ function displayEvents(locationTitle)
     }
 
     //loop through all events
-    for (var i = 0; i < events.length; i++)
-    {
+    for (var i = 0; i < events.length; i++) {
         //loops through events in target location
-        for (var j = 0; j < locEventTitles.length; j++)
-        {
+        for (var j = 0; j < locEventTitles.length; j++) {
             // if the event headline matches the event
             // title passed by the location
-            if (events[i].text.headline == locEventTitles[j])
-            {
+            if (events[i].text.headline == locEventTitles[j]) {
                 //add that event to the modal
                 addEventToModal(i);
             }
@@ -147,32 +139,30 @@ function displayEvents(locationTitle)
 }
 
 //adds one of related events to modal
-function addEventToModal(index)
-{
+function addEventToModal(index) {
     var event = events[index];
     var date = createDate(event.start_date);
 
     //creates the list item for the related events
     $("#eventList").append(
-        "<a href='#' class='list-group-item list-group-item-action flex-column align-items-start event' id='e"+index+"'>"+
+        "<a href='#' class='list-group-item list-group-item-action flex-column align-items-start event' id='e" + index + "'>" +
         "<div class='d-flex w-100 justify-content-between'>" +
-            "<h5 class='mb-1'>" + event.text.headline + "</h5>" +
-            "<small>" + date + "</small>" +
+        "<h5 class='mb-1'>" + event.text.headline + "</h5>" +
+        "<small>" + date + "</small>" +
         "</div>" +
         "<p class='mb-1'>" + event.text.text.substr(0, 50) + "...</p>" +
         "</a>"
     );
 
     //creates the listeners for the displayed events
-    $("#e"+index).click(function () {
+    $("#e" + index).click(function () {
         var headline = $(this).children("div").children("h5").text();
         displayEvent(headline);
     });
 }
 
 //reads the different date inputs to display properly
-function createDate(start_date)
-{
+function createDate(start_date) {
     var date = "";
 
     if (start_date.year != null) {
@@ -182,11 +172,11 @@ function createDate(start_date)
 
             if (start_date.day != null) {
                 date = start_date.month + "/" +
-                       start_date.day + "/" +
-                       date;
+                    start_date.day + "/" +
+                    date;
             } else {
                 date = start_date.month + "/" +
-                       date;
+                    date;
             }
         }
     }
@@ -196,16 +186,13 @@ function createDate(start_date)
 
 /*  Displays the event in the selected event modal
     Activates when clicked on in modal              */
-function displayEvent(eventHeadline)
-{
+function displayEvent(eventHeadline) {
     var event;
 
-    for (var i = 0; i < events.length; i++)
-    {
+    for (var i = 0; i < events.length; i++) {
         event = events[i];
 
-        if (event.text.headline == eventHeadline)
-        {
+        if (event.text.headline == eventHeadline) {
             $("#eventTitle").html(event.text.headline);
             $("#eventText").html(event.text.text);
         }

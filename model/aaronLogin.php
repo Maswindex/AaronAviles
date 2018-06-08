@@ -9,17 +9,34 @@
  */
 
 //bring the Password file
+session_start();
+
+
 require_once "/home/tsevimgr/config.php";
+
+
+$checkPassword = $checkUser = "";
+
 
 validateAdmin();
 
 
 //validateAdmin();
 
-function redirectToAdmin()
+/**
+ * This function will echo
+ * @param $url
+ */
+function redirectToAdmin($url)
 {
-    http_redirect("http://tsevim.greenriverdev.com/355/AaronAviles/admin");
+    $string = '<script type="text/javascript">';
+    $string .= 'window.location = "' . $url . '"';
+    $string .= '</script>';
+
+    //redirect by echoing
+    echo $string;
 }
+
 
 /**
  * This function will validate aaron's input with the file in the "DB" existing file in the
@@ -27,45 +44,46 @@ function redirectToAdmin()
  */
 function validateAdmin()
 {
-    //is the send data coming Submit button or JS ?
+
+    //This URL WILL BE A constant
+    $url = "http://tsevim.greenriverdev.com/355/AaronAviles/admin";
+
+    //data coming from submit button post
     if(!isset($_POST['fromJS']))
     {
+        //if logged in person is aaron
+        if($_SESSION['user'] == $_POST['username'])
+        {
+            //redirect
+            redirectToAdmin($url);
+        } else
+        {
+            echo "Invalid address please leave!";
+        }
 
-        
-        var_dump($_POST);
 
-
-    } else
+    } else //data from js validation
     {
-        $checkUser = $checkPassword = false;
         //tried to enter password | clicked off input | Invoked JS function
 
         //Return a message to display on the Error position
         if(isset($_POST['forusername']) && $_POST['username'] != AA_USERNAME)
         {
             //Tried to enter username } failed
-            echo "Invalid USERNAME";
+            echo "Invalid username";
         } else if(isset($_POST['forpassword']) && $_POST['password'] != AA_PASSWORD)
         {
             //Tried to enter Password } failed
 
-            echo "INVALID password";
+            echo "Invalid password";
         } //check all
         if(isset($_POST['forusername']) && $_POST['username'] == AA_USERNAME)
         {
             echo "<span class='text-success'><i class=\"fa fa-check text-success \" aria-hidden=\"true\"></i></span>";
-            $checkUser = true;
 
         } else if(isset($_POST['forpassword']) && $_POST['password'] == AA_PASSWORD)
         {
             echo "<span class='text-success'><i class=\"fa fa-check text-success \" aria-hidden=\"true\"></i></span>";
-            $checkPassword = true;
-        }
-
-        //validated good to access
-        if($checkPassword == 1 && $checkUser == 1)
-        {
-            redirectToAdmin();
         }
     }
 
