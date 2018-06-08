@@ -33,6 +33,9 @@ $f3->route('GET /places', function ()
 });
 
 
+/**
+ * Admin route that will validate the user
+ */
 $f3->route('GET|POST /admin', function ($f3)
 {
     $view = new View();
@@ -63,14 +66,6 @@ $f3->route('GET|POST /login', function ()
     require_once "model/aaronLogin.php";
 
     echo $view->render('view/login.html');
-});
-
-
-//location upload
-$f3->route('POST|GET /admin/locationAdd', function ($f3)
-{
-    $view = new View();
-    echo $view->render('view/citySearch.html');
 });
 
 

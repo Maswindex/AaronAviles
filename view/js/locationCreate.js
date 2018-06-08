@@ -26,6 +26,7 @@ function test() {
         var jsonString = JSON.stringify(place.geometry);
         console.log(jsonString);
         //update the file
+        // updateJsonFile(place);
 
 
         $("#locationAddButton").on("click", function () {
@@ -87,10 +88,12 @@ function test() {
                     mapLocations = JSON.stringify(result);
 
                     console.log(mapLocations);
-
                     console.log("Added");
                     console.log(result);
 
+                },
+                error: function (result) {
+                    alert("error occured" + result);
                 }
 
 
