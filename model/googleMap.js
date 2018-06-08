@@ -22,18 +22,41 @@ function myMap()
     var markers = [];
     var mapCanvas = document.getElementById("map");
     var mapOptions = {
-        center: locations[0].position,
-        zoom: 5
+        center: {
+            lat: 39.8283,
+            lng: -98.5795
+        },
+        zoom:2
     };
     var map = new google.maps.Map(mapCanvas, mapOptions);
+    google.maps.event.addListenerOnce(map, 'idle', function(){
+        // do something only the first time the map is loaded
+        $(".gmnoprint").addClass("marker-parent");
 
+    });
     //create each marker
     for (var i = 0; i < locations.length; i++) {
         markers[i] = new google.maps.Marker(
             {
                 position: locations[i].position,
-                map: map,
-                title: locations[i].title
+                title: locations[i].title,
+                icon: {
+                    url: locations[i].icon,
+                    size: {
+                        width: 50,
+                        height: 50,
+                        widthUnit: 'px',
+                        heightUnit: 'px'
+                    },
+                    scaledSize: {
+                        width: 50,
+                        height: 50,
+                        widthUnit: 'px',
+                        heightUnit: 'px'
+                    }
+                },
+                animation: google.maps.Animation.BOUNCE,
+                map: map
             }
 
         //add listeners to each to display modal
@@ -41,6 +64,8 @@ function myMap()
             displayEvents(this.title);
         });
     }
+
+    // $( ".gm-style > div > div > div > div > img" ).addClass('markers');
 }
 
 //fills locations with locations from the json file
@@ -187,3 +212,7 @@ function displayEvent(eventHeadline)
     }
     $("#selectedEvent").modal();
 }
+
+$("document").ready(function(){
+    $(".gmnoprint").addClass("marker-parent");
+});

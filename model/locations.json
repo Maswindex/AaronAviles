@@ -11,7 +11,8 @@
       "First Meeting",
       "Where it all Begin"
     ],
-    "title": "LAStadium"
+    "title": "LAStadium",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg"
   },
   {
     "position": {
@@ -23,7 +24,8 @@
       "Exploring the sky with a Drone",
       "Where it all Begin"
     ],
-    "title": "VegasDay"
+    "title": "VegasDay",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg"
   },
   {
     "position": {
@@ -34,13 +36,15 @@
       "First Meeting",
       "Where it all Begin"
     ],
-    "title": "SpaceNeedle"
+    "title": "SpaceNeedle",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg"
   },
   {
     "position": {
       "lat": 40.7128,
       "lng": -74.0060
     },
-    "title": "New York"
+    "title": "New York",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg"
   }
 ]

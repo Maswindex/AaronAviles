@@ -14,6 +14,14 @@
 
     <!--link css-->
     <link rel="stylesheet" href="styles/home_styles.css">
+
+    <style>
+        .gm-style > div > div > div > div > img {
+            border-radius: 100%;
+            border: solid black;
+        }
+    </style>
+
 </head>
 <body class="bg fixed-top">
 
@@ -104,6 +112,16 @@
 <!-- Google Maps Script -->
 <script src="model/googleMap.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&callback=myMap"></script>
+
+<script>
+
+    // $( ".gm-style > div > div > div > div > img" ).css('border-radius', '100%');
+    // $(".gmnoprint").addClass("marker-parent");
+
+    // for(;;) {
+    //     $( ".gm-style > div > div > div > div > img" ).toggle('markers');
+    // }
+</script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
