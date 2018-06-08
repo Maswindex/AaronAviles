@@ -85,32 +85,7 @@ END CONTAINER
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-<script>
-
-    //checks validation of user while typing
-    $("#username").focusout(function () {
-        $.post('model/aaronLogin.php',
-            {
-                fromJS: true,
-                username: $(this).val(),
-                forusername: true
-            }, function (results) {
-                $('#username_err').html(results);
-            });
-    });
-
-    //checks validation of user while typing
-    $("#pass").focusout(function () {
-        $.post('model/aaronLogin.php',
-            {
-                fromJS: true,
-                password: $(this).val(),
-                forpassword: true
-            }, function (results) {
-                $('#pass_err').html(results);
-            });
-    });
-</script>
+<script src="./view/js/login.js" type="application/javascript"></script>
 
 </body>
 </html>
