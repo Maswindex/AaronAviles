@@ -50,7 +50,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link p-0 mr-4 active" href="./admin">Admin</a>
+                    <a class="nav-link p-0 mr-4 active" href="./logout">Logout</a>
                 </li>
             </ul>
         </div>
@@ -351,16 +351,14 @@ function test() {
                     //send to php to grab the data
                     // $.post()
 
-                    $.post("http://tsevim.greenriverdev.com/355/AaronAviles/view/js/test.php",{location:locationObject} ,function (data, status) {
-                        // alert("Data: " + data + "\nStatus: " + status);
-                        alert(locationObject.position.lat +
-                            "\n" + locationObject.position.lng + "\n" +
-                            locationObject.title);
-                    });
-
+                    $.post("http://tsevim.greenriverdev.com/355/AaronAviles/view/js/test.php",
+                        {location: locationObject}, function (data, status) {
+                            // alert("Data: " + data + "\nStatus: " + status);
+                            alert(locationObject.position.lat +
+                                "\n" + locationObject.position.lng + "\n" +
+                                locationObject.title);
+                        });
                 }
-
-
             });
             return json;
         })();

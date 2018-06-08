@@ -34,6 +34,11 @@ $f3->route('GET|POST /admin', function ($f3)
 {
     $view = new View();
 
+    if(empty($_SESSION['user']))
+    {
+        $f3->reroute('/login');
+    }
+
     $aaronTitle = "Aaron Aviles";
 
     $f3->set('title', $aaronTitle);
@@ -60,6 +65,25 @@ $f3->route('POST|GET /admin/locationAdd', function ($f3)
 {
     $view = new View();
     echo $view->render('view/citySearch.html');
+});
+
+
+//location upload
+$f3->route('POST|GET /logout', function ($f3)
+{
+    $view = new View();
+    if(empty($_SESSION))
+    {
+        $f3->reroute('/login');
+    }
+
+    require_once 'model/logout.php';
+
+    if(empty($_SESSION['user']))
+    {
+        //Successfully logged out
+        $f3->reroute('/');
+    }
 });
 
 

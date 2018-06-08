@@ -23,14 +23,17 @@ validateAdmin();
 
 //validateAdmin();
 
+/**
+ * This function will echo
+ * @param $url
+ */
 function redirectToAdmin($url)
 {
-
-
     $string = '<script type="text/javascript">';
     $string .= 'window.location = "' . $url . '"';
     $string .= '</script>';
 
+    //redirect by echoing
     echo $string;
 }
 
@@ -42,8 +45,8 @@ function redirectToAdmin($url)
 function validateAdmin()
 {
 
+    //This URL WILL BE A constant
     $url = "http://tsevim.greenriverdev.com/355/AaronAviles/admin";
-
 
     //data coming from submit button post
     if(!isset($_POST['fromJS']))
@@ -52,12 +55,10 @@ function validateAdmin()
         if($_SESSION['user'] == $_POST['username'])
         {
             //redirect
-
             redirectToAdmin($url);
         } else
         {
             echo "Invalid address please leave!";
-
         }
 
 
