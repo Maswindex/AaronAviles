@@ -67,7 +67,7 @@ function test() {
 
 
         //Json request URL
-        var jsonURL = "http://tsevim.greenriverdev.com/355/AaronAviles/view/json/mapLocations.";
+        var jsonURL = "./view/json/mapLocations.json";
         // locationObject.position = place.geometry.location.lat();
 
         //Recieve the current local Locations file to push the recieved changes
@@ -93,7 +93,11 @@ function test() {
 
                 },
                 error: function (result) {
-                    alert("error occured" + result);
+
+                    $("span.location_error").html("<p class='text-danger'>Error Occured while loading to file</p><br><p class='text-danger text-uppercase'>Try Again!</p>");
+                    console.log("Error openning file path: File can not be reached");
+
+
                 }
 
 
