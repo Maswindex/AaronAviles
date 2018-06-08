@@ -54,6 +54,10 @@ function test() {
         locationObject.title = place.name;
 
 
+        //Use the uploaded image path / URL
+        locationObject.icon = "";
+
+
         //display on screen
         // location.latitude.value = place.geometry.location.lat();
         // location.city.value = place.name;
@@ -77,19 +81,29 @@ function test() {
                 url: jsonURL,
                 async: true,
                 success: function (result) {
-                    console.log(locationObject);
-
-                    console.log("Before::");
-                    console.log(result);
+                    // console.log(locationObject);
+                    //
+                    // console.log("Before::");
+                    // console.log(result);
 
                     result.push(locationObject);
 
 
                     mapLocations = JSON.stringify(result);
+                    //this is good enough to send to server
+                    $.post('././model/add-location.php',
+                        {
+                            postLocation: true,
+                            location: mapLocations
+                        },
 
-                    console.log(mapLocations);
-                    console.log("Added");
-                    console.log(result);
+                        function (results) {
+
+                            console.log("after post : <br>" + results);
+                        });
+
+                    console.log("PUSHED CONTENT" + mapLocations);
+
 
                 },
                 error: function (result) {
@@ -102,6 +116,8 @@ function test() {
 
 
             });
+
+            console.log("This is json" + json);
             return json;
         })();
 
