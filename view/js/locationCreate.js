@@ -7,10 +7,10 @@ function test() {
 
     const location =
         {
-            latitude: document.getElementById('latitude'),
-            longitude: document.getElementById('longitude'),
-            city: document.getElementById('city'),
-            state: document.getElementById('state'),
+            // latitude: document.getElementById('latitude'),
+            // longitude: document.getElementById('longitude'),
+            // city: document.getElementById('city'),
+            // state: document.getElementById('state'),
             country: document.getElementById('country')
         };
     //search bar for new location
@@ -55,11 +55,11 @@ function test() {
 
 
         //display on screen
-        location.latitude.value = place.geometry.location.lat();
-        location.city.value = place.name;
-        location.longitude.value = place.geometry.location.lng();
+        // location.latitude.value = place.geometry.location.lat();
+        // location.city.value = place.name;
+        // location.longitude.value = place.geometry.location.lng();
         location.country.value = place.formatted_address;
-        location.state.value = place.address_components[2].short_name;
+        // location.state.value = place.address_components[2].short_name;
 
 
         //this is the array of all locations in the map
@@ -67,7 +67,7 @@ function test() {
 
 
         //Json request URL
-        var jsonURL = "http://tsevim.greenriverdev.com/355/AaronAviles/view/json/mapLocations.json";
+        var jsonURL = "http://tsevim.greenriverdev.com/355/AaronAviles/view/json/mapLocations.";
         // locationObject.position = place.geometry.location.lat();
 
         //Recieve the current local Locations file to push the recieved changes
