@@ -9,6 +9,8 @@ adminNavigation.js
 $('#eventForm').show();
 $('#locationForm').hide();
 $('#partnersForm').hide();
+$('.added-list').hide();
+
 
 // Show events
 $('#viewEvents').click(function () {
@@ -27,6 +29,12 @@ $('#viewLocations').click(function () {
     $('#locationForm').show();
     $('#partnersForm').hide();
 
+    //THIS
+    // $(".list-group").hide()
+
+    $('.added-list').show();
+    $('.list-group-flush').show();
+
     populateList($this);
     return false;
 });
@@ -35,7 +43,6 @@ $('#viewLocations').click(function () {
 $('#viewPartners').click(function () {
     $('#eventForm').hide();
     $('#locationForm').hide();
-    $('#partnersForm').show();
 
     populateList($this);
     return false;

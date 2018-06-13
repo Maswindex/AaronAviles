@@ -1,12 +1,29 @@
 /* Body elements */
-.main-content
-{
+.main-content {
     min-height: 100%;
     background-color: #EEE;
 }
 
 /* Page styles */
-ul
-{
+ul {
     list-style-type: none;
 }
+
+.update-item {
+    background-color: #e8e4f6;
+}
+
+.update-item:hover {
+    background-color: #a0a0a0;
+}
+
+.selected {
+    color: #fff !important;
+    background-color: #636363;
+}
+
+.selected:hover {
+    color: #fff;
+    background-color: #363636;
+}
+

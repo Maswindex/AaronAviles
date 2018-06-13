@@ -147,38 +147,35 @@
                             <input type="text" class="form-control" id="country" name="country">
                         </div>
 
+                        <h5 class="divider">Event Images</h5>
+                        <div class="form-group">
+                            <label for="eventImage">Event Images</label>
+                            <input type="file" class="form-control-file" id="imageEvent"
+                                   name="eventImage[]">
+
+
+                            <!--if (move_uploaded_file($_FILES["eventImage"]["tmp_name"][$i], $target_file))-->
+                            <!--{-->
+                            <!--echo "The file ". basename( $_FILES["eventImage"]["name"][$i]). " has been uploaded.";-->
+                            <!--}-->
+                            <!--else-->
+                        </div>
+
                         <h5 class="divider">Related Events</h5>
 
 
                         <div class="dropdown mb-5">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown button
+                                Pick Events
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
+                            <div class="dropdown-menu event-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item update-item" href="#"></a>
                             </div>
                         </div>
 
-                        <!--<div class="form-group">-->
-                        <!--<label for="city">City</label>-->
-                        <!--<input type="text" class="form-control" id="city" name="city">-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="state">State</label>-->
-                        <!--<input type="text" class="form-control" name="state" id="state">-->
-                        <!--</label>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="latitude">Latitude</label>-->
-                        <!--<input type="text" class="form-control" name="latitude" id="latitude">-->
-                        <!--</label>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                        <!--<label for="longitude">Longitude</label>-->
-                        <!--<input type="text" class="form-control" name="longitude" id="longitude">-->
-                        <!--</label>-->
-                        <!--</div>-->
+
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-success btn-lg" id="locationAddButton">
                                 Add Location
@@ -187,47 +184,47 @@
                     </form>
                 </div>
 
-                <!--Partners form-->
-                <div class="col-6 container bg-light py-3" id="partnersForm">
-                    <h5>Partners Form</h5>
-                    <form class="form" action="#" method="post" role="form"
-                          autocomplete="off">
-                        <div class="form-group">
-                            <label for="inputLocation">Search Place</label>
-                            <input type="text" class="form-control" name="inputLocation">
-                        </div>
+                <!--&lt;!&ndash;Partners form&ndash;&gt;-->
+                <!--<div class="col-6 container bg-light py-3" id="partnersForm">-->
+                <!--<h5>Partners Form</h5>-->
+                <!--<form class="form" action="#" method="post" role="form"-->
+                <!--autocomplete="off">-->
+                <!--<div class="form-group">-->
+                <!--<label for="inputLocation">Search Place</label>-->
+                <!--<input type="text" class="form-control" name="inputLocation">-->
+                <!--</div>-->
 
-                        <!--Fill the address-->
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input type="text" class="form-control" name="country">
-                        </div>
-                        <div class="form-group">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" name="city">
-                        </div>
-                        <div class="form-group">
-                            <label for="state">State</label>
-                            <input type="text" class="form-control" name="state">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="latitude">Latitude</label>
-                            <input type="text" class="form-control" name="latitude">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="longitude">Longitude</label>
-                            <input type="text" class="form-control" name="longitude">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-lg float-right">
-                                Add Location
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                <!--&lt;!&ndash;Fill the address&ndash;&gt;-->
+                <!--<div class="form-group">-->
+                <!--<label for="country">Country</label>-->
+                <!--<input type="text" class="form-control" name="country">-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<label for="city">City</label>-->
+                <!--<input type="text" class="form-control" name="city">-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<label for="state">State</label>-->
+                <!--<input type="text" class="form-control" name="state">-->
+                <!--</label>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<label for="latitude">Latitude</label>-->
+                <!--<input type="text" class="form-control" name="latitude">-->
+                <!--</label>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<label for="longitude">Longitude</label>-->
+                <!--<input type="text" class="form-control" name="longitude">-->
+                <!--</label>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<button type="submit" class="btn btn-success btn-lg float-right">-->
+                <!--Add Location-->
+                <!--</button>-->
+                <!--</div>-->
+                <!--</form>-->
+                <!--</div>-->
 
                 <!--Changing list-->
                 <div class="col-6 container bg-light py-3">
@@ -242,6 +239,12 @@
                             Third item
                         </a>
                     </div>
+
+
+                    <div class="list-group added-list mb-2">
+                        <a class="list-group-item selected pr-1">Picked Events:</a>
+                    </div>
+
                 </div>
 
             </div>
@@ -268,6 +271,7 @@
 
 
 <script src="./view/js/locationCreate.js" type="application/javascript"></script>
+<!--<script src="./view/js/locationAddEvents.js" type="application/javascript"></script>-->
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
         async defer></script>

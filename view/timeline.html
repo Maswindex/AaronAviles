@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!--Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +14,9 @@
 
     <!--link css-->
     <link rel="stylesheet" href="styles/home_styles.css">
-    <link title="timeline-styles" rel="stylesheet" type="text/css" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <link title="timeline-styles" rel="stylesheet" type="text/css"
+          href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+
 
 </head>
 <body class="bg fixed-top">
@@ -31,6 +33,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!--//Collapsed navbar -->
         <div class="collapse justify-content-around navbar-collapse col col-lg-4" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -41,16 +44,97 @@
                     <a class="nav-link p-0 mr-4 active" href="#">Life</a>
                 </li>
 
+                <!--/Take IT OUT AFTER INTEGRATION-->
                 <li class="nav-item">
                     <a class="nav-link p-0 mr-4" href="./admin">Admin</a>
                 </li>
+
+                <style>
+
+
+                    @media (min-width: 992px) {
+
+                        #mediaExpanded {
+                            display: none !important;
+                        }
+
+                    }
+
+                </style>
+
+                <li class="nav-item" id="mediaExpanded">
+                    <!-- Default dropright button -->
+                    <div class="nav-item btn-group dropright">
+
+                        <a class="dropdown-toggle nav-link p-0 mr-4" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Stay connected <i class="fa fa-link"
+                                                                                        aria-hidden="true"></i></a>
+
+                        <!--//social media icons-->
+                        <div class="dropdown-menu">
+                            <!-- Dropdown menu links -->
+
+                            <!--Facebook-->
+                            <a href="" type="button" class="btn-floating btn-lg"><i class="fa fa-facebook"></i></a>
+                            <!--Twitter-->
+                            <a href="" type="button" class="btn-floating btn-lg"><i class="fa fa-twitter"></i></a>
+                            <!--Google +-->
+                            <a href="" type="button" class="btn-floating btn-lg"><i class="fa fa-instagram"></i></a>
+
+
+                        </div>
+                    </div>
+                </li>
+
             </ul>
         </div>
+
+        <!--<style>-->
+
+        <!--/*// Extra small devices (portrait phones, less than 576px)*/-->
+        <!--@media (max-width: 575px) {-->
+
+        <!--}-->
+
+        <!--/*// Small devices (landscape phones, 576px and up)*/-->
+        <!--@media (min-width: 576px) and (max-width: 767px) {-->
+
+        <!--#icons {-->
+        <!--float: right;-->
+        <!--}-->
+        <!--}-->
+
+        <!--/*// Medium devices (tablets, 768px and up)*/-->
+        <!--@media (min-width: 768px) and (max-width: 991px) {-->
+
+        <!--}-->
+
+        <!--/*// Large devices (desktops, 992px and up)*/-->
+        <!--@media (min-width: 992px) and (max-width: 1199px) {-->
+
+        <!--}-->
+
+        <!--/*// Extra large devices (large desktops, 1200px and up)*/-->
+        <!--@media (min-width: 1200px) {-->
+
+        <!--}-->
+        <!--</style>-->
+
+        <div class="collapse navbar-collapse justify-content-end col col-lg-4 text-right" id="icons">
+            <!--Facebook-->
+            <a type="button" class="btn-floating btn-lg"><i class="fa fa-facebook"></i></a>
+            <!--Twitter-->
+            <a type="button" class="btn-floating btn-lg"><i class="fa fa-twitter"></i></a>
+            <!--Google +-->
+            <a type="button" class="btn-floating btn-lg"><i class="fa fa-instagram"></i></a>
+
+        </div>
+
     </div>
 </nav>
 
 <!--Holds the Timeline-->
-<div class="container h-100" >
+<div class="container h-100">
     <div class="row h-100 justify-content-center">
         <div class="container pt-5 col-12 mx-auto h-100" id="main-container">
             <div id='timeline-embed'></div>
@@ -75,16 +159,17 @@
     window.timeline = new TL.Timeline('timeline-embed', 'model/test_events.json');
 </script>
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+jQuery first, then Popper.js, then Bootstrap JS
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"-->
+<!--integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"-->
+<!--crossorigin="anonymous"></script>-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
 
 </body>
 </html>
