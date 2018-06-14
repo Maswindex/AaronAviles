@@ -126,7 +126,9 @@
                             <label for="urlCaption">Caption</label>
                             <input type="text" class="form-control" id="urlCaption" name="urlCaption">
                         </div>
-                        <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
+                        <button type="submit" id="eventAddButton" class="btn btn-success btn-lg float-right">
+                            Add Event
+                        </button>
                     </form>
                 </div>
 
@@ -184,61 +186,12 @@
                     </form>
                 </div>
 
-                <!--&lt;!&ndash;Partners form&ndash;&gt;-->
-                <!--<div class="col-6 container bg-light py-3" id="partnersForm">-->
-                <!--<h5>Partners Form</h5>-->
-                <!--<form class="form" action="#" method="post" role="form"-->
-                <!--autocomplete="off">-->
-                <!--<div class="form-group">-->
-                <!--<label for="inputLocation">Search Place</label>-->
-                <!--<input type="text" class="form-control" name="inputLocation">-->
-                <!--</div>-->
-
-                <!--&lt;!&ndash;Fill the address&ndash;&gt;-->
-                <!--<div class="form-group">-->
-                <!--<label for="country">Country</label>-->
-                <!--<input type="text" class="form-control" name="country">-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label for="city">City</label>-->
-                <!--<input type="text" class="form-control" name="city">-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label for="state">State</label>-->
-                <!--<input type="text" class="form-control" name="state">-->
-                <!--</label>-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label for="latitude">Latitude</label>-->
-                <!--<input type="text" class="form-control" name="latitude">-->
-                <!--</label>-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label for="longitude">Longitude</label>-->
-                <!--<input type="text" class="form-control" name="longitude">-->
-                <!--</label>-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<button type="submit" class="btn btn-success btn-lg float-right">-->
-                <!--Add Location-->
-                <!--</button>-->
-                <!--</div>-->
-                <!--</form>-->
-                <!--</div>-->
-
                 <!--Changing list-->
                 <div class="col-6 container bg-light py-3">
-                    <div class="list-group">
-                        <a class="list-group-item">
-                            First item
-                        </a>
-                        <a class="list-group-item">
-                            Second item
-                        </a>
-                        <a class="list-group-item">
-                            Third item
-                        </a>
+                    <div class="list-group" id="changeList">
+
                     </div>
+                </div>
 
 
                     <div class="list-group added-list mb-2">
