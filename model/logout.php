@@ -12,9 +12,8 @@ session_start();
 
 unset($_SESSION['username']);
 session_destroy();
+//send him back to the main page
 
-define("AA_HOMEPAGE", "www.tsevim.greenriverdev.com/355/Aaronaviles");
-
-header('Location: ' . AA_HOMEPAGE);
+header('Location: ' . "./");
 
 

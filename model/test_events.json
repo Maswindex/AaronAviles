@@ -156,37 +156,6 @@
                 "headline": "",
                 "text": " - Entertainment"
             }
-        },
-        {
-            "media": {
-                "url": "",
-                "caption": ""
-            },
-            "start_date": {
-                "month": "06",
-                "day": "22",
-                "year": "2018"
-            },
-            "text": {
-                "headline": "Group Testing",
-                "text": "A test group thing for the event categories - Travel"
-            }
-        },
-        {
-            "media": {
-                "url": "",
-                "caption": ""
-            },
-            "start_date": {
-                "month": "11",
-                "day": "30",
-                "year": "2019"
-            },
-            "text": {
-                "headline": "Group Testing",
-                "text": "Take Two"
-            },
-            "group": "Hospitality"
         }
     ]
 }

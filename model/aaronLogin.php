@@ -46,7 +46,8 @@ function validateAdmin()
 {
 
     //This URL WILL BE A constant
-    $url = "http://tsevim.greenriverdev.com/355/AaronAviles/admin";
+    $url = "./admin";
+
 
     //data coming from submit button post
     if(!isset($_POST['fromJS']))
@@ -56,9 +57,9 @@ function validateAdmin()
         {
             //redirect
             redirectToAdmin($url);
-        } else
+        } else if($_SESSION['user'] != $_POST['username'])
         {
-            echo "Invalid address please leave!";
+            echo "Invalid access!";
         }
 
 

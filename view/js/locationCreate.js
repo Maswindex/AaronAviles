@@ -3,21 +3,15 @@ google.maps.event.addDomListener(window, 'load', test);
 
 var aaronSelected = new array();
 
+var events = [];
+var locations = [];
+
 //Location Creater
 function test() {
     //display of the form
     //This will hold the information to append to the local file
-
-    var events = {};
-    var locations = [];
-
-
     const location =
         {
-            // latitude: document.getElementById('latitude'),
-            // longitude: document.getElementById('longitude'),
-            // city: document.getElementById('city'),
-            // state: document.getElementById('state'),
             country: document.getElementById('country')
         };
     //search bar for new location
@@ -25,41 +19,35 @@ function test() {
     var autocomplete = new google.maps.places.Autocomplete(input);
 
 
+    fillLocations();
+    fillEvents();
+    createRelatedEvents();
+
     //START THE FUNCTION as the place selected - get the data's
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
 
         //autocomplete return
         var place = autocomplete.getPlace();
-        var finalList = [];
-//pulled the events
+        var eventsFinalList = [];
+        //pulled the events
         var selectedEvents = [];
-        var jsonString = JSON.stringify(place.geometry);
-
-        //start the Events barxcv
-        start(selectedEvents);
 
 
+        //start the Events
+        // selectedEvents = start(selectedEvents);
+
+        console.log("Selected Events are : " + selectedEvents);
+
+        pickRelatedEvents(selectedEvents);
         //When the button is clicked
-        $("#locationAddButton").on("click", function () {
-
-            event.preventDefault();
-            updateJsonFile(place, finalList);
-
-
-        });
+        // $("#locationAddButton").on("click", function () {
+        //
+        //     event.preventDefault();
+        //     updateJsonFile(place, eventsFinalList);
+        // });
 
 
     });
-    //
-    // function recieveList(selectedEvents) {
-    //
-    //
-    //     for (var i = 0; i < selectedEvents.length; i++) {
-    //         this += selectedEvents[i];
-    //     }
-    //
-    // }
-
 
     //this function will display the results of the search on screen and then will update
     //the location Json file with the appended new location
@@ -83,7 +71,6 @@ function test() {
 
         locationObject = JSON.stringify(locationObject);
 
-        console.log("This is " + selectedEvents[0]);
         $.post('././model/add-location.php',
             {
                 postLocation: true,
@@ -92,7 +79,6 @@ function test() {
 
             function (results) {
 
-                // console.log("after post : <br>" + results);
 
             });
 
@@ -106,18 +92,22 @@ function test() {
 
 
 //Start all function
-function start(selectedEvents) {
+// function start(selectedEvents) {
+//
+//
+//     fillEvents();
+//     fillLocations();
+//     createRelatedEvents();
+//     selectedEvents = pickRelatedEvents(selectedEvents);
+//
+//     return selectedEvents;
+//
+// }
 
 
-    fillEvents();
-    fillLocations();
-    createRelatedEvents();
-    pickRelatedEvents(selectedEvents);
-
-
-}
-
-
+/**
+ * This function will generate the items on a dropdown list as Related events to be selected
+ */
 function createRelatedEvents() {
 
 //Fill the checkbox / dropdown
@@ -140,20 +130,10 @@ function pickRelatedEvents(selectedEvents) {
 
         //define selected items
 
-        //Pick the selected list of events on the right side
+        //Pick the selected item and put it on the right side as selected
         if (!selectedEvents.includes($(this).html())) {
 
             selectedEvents += $(this).html();
-
-            // aaronSelected += $(this).html();
-            aaronSelected[0] = " ";
-
-            aaronSelected.push($(this).html());
-
-            console.log("added" + $(this).html());
-
-            console.log("Aaron selected: " + aaronSelected);
-
 
             // <span class='badg$(this).html()e badge-pill badge-danger'>Remove</span>
             $(".added-list").append('<a class="list-group-item selected pr-1">' + $(this).html() + "</a>");
