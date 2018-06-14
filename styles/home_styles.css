@@ -1,8 +1,49 @@
+/*Toygan Sevim */
+/*home_styles.css*/
+/*This file will contain the general css for aaronaviles.com*/
+
 body, html {
     height: 100%
 }
 
+/*SOCIAL MEDIA ICONS*/
+a.social-menu-big.mx-1 {
+    padding-right: 5px;
+    font-size: 2rem !important;
+    text-size-adjust: auto;
+}
 
+a.social-menu {
+    text-decoration: none;
+    color: black;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.fa-facebook:hover {
+    color: #3B5998;
+}
+
+.fa-instagram:hover {
+    background: linear-gradient(-100deg, rgb(5, 29, 245), rgb(167, 45, 159), rgb(238, 49, 121), #ffe71a);
+    color: #fff;
+}
+
+.fa-twitter:hover {
+    color: #00aced;
+}
+
+.fa-ellipsis-h:hover {
+    content: string(more);
+}
+
+@media (min-width: 992px) {
+
+    #mediaExpanded {
+        display: none !important;
+    }
+
+}
 
 .user-login-box {
     opacity: .5;
@@ -27,9 +68,10 @@ a.clear-text:hover {
 
 a.link-style-none:hover {
     background: radial-gradient(ellipse at center bottom,
-                                rgba(211, 214, 217, 0.86) 5%,
-                                rgba(255, 255, 255, 0.04) 100%);
+    rgba(211, 214, 217, 0.86) 5%,
+    rgba(255, 255, 255, 0.04) 100%);
 }
+
 #main-row {
     height: 100%;
     position: absolute;

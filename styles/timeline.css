@@ -464,16 +464,15 @@ i {
 
     /* triangle next to content block */
     /*.cd-timeline__content::before:nth-child(even) {*/
-        /*content: '';*/
-        /*position: absolute;*/
-        /*top: 24px;*/
-        /*right: 100%;*/
-        /*height: 0;*/
-        /*width: 0;*/
-        /*border: 7px solid transparent;*/
-        /*border-right: 5px solid black;*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*top: 24px;*/
+    /*right: 100%;*/
+    /*height: 0;*/
+    /*width: 0;*/
+    /*border: 7px solid transparent;*/
+    /*border-right: 5px solid black;*/
     /*}*/
-
     #trim {
         background-repeat: no-repeat;
         background-position: 60% 45%;
@@ -627,28 +626,26 @@ i {
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
 
-
     /*!* triangle next to content block *!*/
     /*.cd-timeline__content::before:nth-child(even) {*/
-        /*content: '';*/
-        /*position: absolute;*/
-        /*top: 24px;*/
-        /*right: 100%;*/
-        /*height: 0;*/
-        /*width: 0;*/
-        /*border: 7px solid transparent;*/
-        /*border-right: 5px solid black !important;*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*top: 24px;*/
+    /*right: 100%;*/
+    /*height: 0;*/
+    /*width: 0;*/
+    /*border: 7px solid transparent;*/
+    /*border-right: 5px solid black !important;*/
     /*}*/
-
     /*.cd-timeline__content::before:nth-child(odd) {*/
-        /*content: '';*/
-        /*position: absolute;*/
-        /*top: 24px;*/
-        /*right: 100%;*/
-        /*height: 0;*/
-        /*width: 0;*/
-        /*border: 7px solid transparent;*/
-        /*border-right: 5px solid black !important;*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*top: 24px;*/
+    /*right: 100%;*/
+    /*height: 0;*/
+    /*width: 0;*/
+    /*border: 7px solid transparent;*/
+    /*border-right: 5px solid black !important;*/
     /*}*/
     .sales {
         background-size: cover;

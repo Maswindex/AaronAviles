@@ -49,38 +49,24 @@
                     <a class="nav-link p-0 mr-4" href="./admin">Admin</a>
                 </li>
 
-                <style>
-
-
-                    @media (min-width: 992px) {
-
-                        #mediaExpanded {
-                            display: none !important;
-                        }
-
-                    }
-
-                </style>
-
                 <li class="nav-item" id="mediaExpanded">
                     <!-- Default dropright button -->
                     <div class="nav-item btn-group dropright">
 
                         <a class="dropdown-toggle nav-link p-0 mr-4" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Stay connected <i class="fa fa-link"
-                                                                                        aria-hidden="true"></i></a>
+                           aria-haspopup="true" aria-expanded="false">Stay connected</a>
 
                         <!--//social media icons-->
                         <div class="dropdown-menu">
                             <!-- Dropdown menu links -->
-
                             <!--Facebook-->
-                            <a href="" type="button" class="btn-floating btn-lg"><i class="fa fa-facebook"></i></a>
+                            <a href="" class="social-menu"><i class="fa fa-facebook"></i></a>
                             <!--Twitter-->
-                            <a href="" type="button" class="btn-floating btn-lg"><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/aaronaviles" class="social-menu"><i class="fa fa-twitter"></i></a>
                             <!--Google +-->
-                            <a href="" type="button" class="btn-floating btn-lg"><i class="fa fa-instagram"></i></a>
-
+                            <a href="https://www.instagram.com/aaronaviles/" class="social-menu"> <i
+                                    class="fa fa-instagram"></i></a>
+                            <a href="" class="social-menu"> <i class="fa fa-link" aria-hidden="true"></i></a>
 
                         </div>
                     </div>
@@ -88,45 +74,12 @@
 
             </ul>
         </div>
-
-        <!--<style>-->
-
-        <!--/*// Extra small devices (portrait phones, less than 576px)*/-->
-        <!--@media (max-width: 575px) {-->
-
-        <!--}-->
-
-        <!--/*// Small devices (landscape phones, 576px and up)*/-->
-        <!--@media (min-width: 576px) and (max-width: 767px) {-->
-
-        <!--#icons {-->
-        <!--float: right;-->
-        <!--}-->
-        <!--}-->
-
-        <!--/*// Medium devices (tablets, 768px and up)*/-->
-        <!--@media (min-width: 768px) and (max-width: 991px) {-->
-
-        <!--}-->
-
-        <!--/*// Large devices (desktops, 992px and up)*/-->
-        <!--@media (min-width: 992px) and (max-width: 1199px) {-->
-
-        <!--}-->
-
-        <!--/*// Extra large devices (large desktops, 1200px and up)*/-->
-        <!--@media (min-width: 1200px) {-->
-
-        <!--}-->
-        <!--</style>-->
-
         <div class="collapse navbar-collapse justify-content-end col col-lg-4 text-right" id="icons">
             <!--Facebook-->
-            <a type="button" class="btn-floating btn-lg"><i class="fa fa-facebook"></i></a>
-            <!--Twitter-->
-            <a type="button" class="btn-floating btn-lg"><i class="fa fa-twitter"></i></a>
-            <!--Google +-->
-            <a type="button" class="btn-floating btn-lg"><i class="fa fa-instagram"></i></a>
+            <a class="social-menu-big mx-1"><i class="fa fa-facebook"></i></a>
+            <a class="social-menu-big mx-1"><i class="fa fa-twitter"></i></a>
+            <a class="social-menu-big mx-1"><i class="fa fa-instagram"></i></a>
+            <a class="social-menu-big mx-1"><i class="fa fa-ellipsis-h"></i></a>
 
         </div>
 
@@ -159,7 +112,7 @@
     window.timeline = new TL.Timeline('timeline-embed', 'model/test_events.json');
 </script>
 
-jQuery first, then Popper.js, then Bootstrap JS
+<!--jQuery first, then Popper.js, then Bootstrap JS-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
