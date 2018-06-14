@@ -55,6 +55,7 @@ function test() {
 
             event.preventDefault();
             updateJsonFile(place, selectedEvents);
+            window.location.reload(1);
 
         });
 

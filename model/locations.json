@@ -255,6 +255,39 @@
             ],
             "title": "Lloyd Enterprises Inc - Corporate Office",
             "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.37708,
+                "lng": -122.230191
+            },
+            "events": [],
+            "title": "Bill's Locksmith Service",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.3750247,
+                "lng": -122.2019148
+            },
+            "events": [
+                "NBA FINALS",
+                "Exploring the sky with a Drone"
+            ],
+            "title": "Burger King",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.5673237,
+                "lng": -121.8887269
+            },
+            "events": [
+                "Beach Action",
+                "Outdoors exploring inner peace."
+            ],
+            "title": "Fall City",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
         }
     ]
 }

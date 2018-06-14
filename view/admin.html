@@ -9,6 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -151,7 +152,6 @@
                             <input type="file" class="form-control-file" id="eventImage"
                                    name="eventImage">
 
-
                             <!--if (move_uploaded_file($_FILES["eventImage"]["tmp_name"][$i], $target_file))-->
                             <!--{-->
                             <!--echo "The file ". basename( $_FILES["eventImage"]["name"][$i]). " has been uploaded.";-->
@@ -226,5 +226,47 @@
 
 <!-- Populate lists script -->
 <script src="./view/js/adminNavigation.js" type="application/javascript"></script>
+<script>
+    // document.getElementById('eventImage').onchange = function (ev) {
+    //     ev.preventDefault();
+    //     document.getElementById('locationForm').submit();
+    // }
+
+    $('#eventImage').change(function () {
+        // alert("changes");
+        startUpload();
+
+    });
+
+    function startUpload() {
+        var file_data = $('#eventImage').prop('files')[0];
+
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+
+
+        $.ajax({
+            url: './model/file-upload.php', // point to server-side PHP script
+            cache: false,
+            imagePost: true,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function (php_script_response) {
+
+                //uploaded success
+
+            },
+            error: function () {
+                //error
+            }
+        });
+
+
+    }
+
+</script>
+
 </body>
 </html>
