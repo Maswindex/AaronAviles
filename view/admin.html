@@ -1,3 +1,239 @@
+<<<<<<< HEAD
+<!--
+    Author: Raine Padilla | Toygan Sevim
+      Date: 4/14/2018
+   Updated: 5/29/2018
+      Team: Remote Workers
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/adminstyles.css" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+            crossorigin="anonymous"></script>
+
+
+    <style>
+        html, body {
+            height: 100% !important;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
+    <div class="row m-0 p-0 w-100 navNav">
+        <a class="navbar-brand font-weight-light col col-lg-4 mr-0" href="./">
+            <strong>A</strong>aron<strong>A</strong>viles
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse justify-content-around navbar-collapse col col-lg-4" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link p-0 mr-4" href="./places">Places</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link p-0 mr-4" href="./">Life</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link p-0 mr-4 active" href="./logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Body Container Div -->
+<div class="container mx-0">
+
+    <!-- Main Content Row -->
+    <div class="row">
+
+        <!-- Left Side Bar Column -->
+        <div class="col-3 mt-3 list-group list-group-flush w-100">
+
+            <a href="#" class="list-group-item" id="viewEvents">
+                <i class="fas fa-list text-dark"></i>
+                <span class="nav-icon">Events</span>
+            </a>
+
+            <a href="#" class="list-group-item" id="viewLocations">
+                <i class="fas fa-list text-dark"></i>
+                <span class="nav-icon">Locations</span>
+            </a>
+
+            <a href="#" class="list-group-item" id="viewPartners">
+                <i class="fas fa-list text-dark"></i>
+                <span class="nav-icon">Partners</span>
+            </a>
+        </div>
+        <!-- End Side Bar Column -->
+
+        <!-- Main Column -->
+        <div class="col-9 container">
+
+            <!--Changing contents-->
+            <div class="row">
+
+                <!-- Event Form -->
+                <div class="col-6 container bg-light py-3" id="eventForm">
+                    <h5>Event Form</h5>
+                    <form class="form" action="model/add-event.php" method="post" role="form"
+                          autocomplete="off">
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <input type="text" class="form-control" id="eventName" name="eventName">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventContent">Event Content</label>
+                            <textarea class="form-control" id="eventContent" name="eventContent"
+                                      rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventImage">Event Images</label>
+                            <input type="file" class="form-control-file" id="eventImage"
+                                   name="eventImage[]">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventCategory">Event Category</label>
+                            <select class="form-control" id="eventCategory" name="eventCategory">
+                                <option selected class="group" value="Entertainment">Entertainment</option>
+                                <option class="group" value="Hospitality">Hospitality</option>
+                                <option class="group" value="Travel">Travel</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Event Date</label>
+                            <input type="date" class="form-control" id="startDate" name="startDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventUrl">URL</label>
+                            <input type="text" class="form-control" id="eventUrl" name="eventUrl">
+                            <label for="urlCaption">Caption</label>
+                            <input type="text" class="form-control" id="urlCaption" name="urlCaption">
+                        </div>
+                        <button type="submit" id="eventAddButton" class="btn btn-success btn-lg float-right">
+                            Add Event
+                        </button>
+                    </form>
+                </div>
+
+                <!--Location form-->
+                <div class="col-6 container bg-light py-3" id="locationForm">
+                    <h5 class="divider">Location Form</h5>
+                    <span class="location_error text-danger"></span>
+                    <form class="form" action="#" method="post" role="form"
+                          autocomplete="off">
+                        <div class="form-group">
+                            <label for="inputLocation">Search Place</label>
+                            <input type="text" class="form-control" id="inputLocation" name="inputLocation">
+                        </div>
+
+                        <!--Fill the address-->
+                        <div class="form-group">
+                            <label for="country">Info</label>
+                            <input type="text" class="form-control" id="country" name="country">
+                        </div>
+
+                        <h5 class="divider">Event Images</h5>
+                        <div class="form-group">
+                            <label for="eventImage">Event Images</label>
+                            <input type="file" class="form-control-file" id="imageEvent"
+                                   name="eventImage[]">
+
+
+                            <!--if (move_uploaded_file($_FILES["eventImage"]["tmp_name"][$i], $target_file))-->
+                            <!--{-->
+                            <!--echo "The file ". basename( $_FILES["eventImage"]["name"][$i]). " has been uploaded.";-->
+                            <!--}-->
+                            <!--else-->
+                        </div>
+
+                        <h5 class="divider">Related Events</h5>
+
+
+                        <div class="dropdown mb-5">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pick Events
+                            </button>
+                            <div class="dropdown-menu event-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item update-item" href="#"></a>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-success btn-lg" id="locationAddButton">
+                                Add Location
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!--Changing list-->
+                <div class="col-6 container bg-light py-3">
+                    <div class="list-group" id="changeList">
+
+                    </div>
+                </div>
+
+
+                    <div class="list-group added-list mb-2">
+                        <a class="list-group-item selected pr-1">Picked Events:</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- End Main Column -->
+
+    </div>
+    <!-- End Main Content Row -->
+
+</div>
+<!-- End Body Container -->
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+
+<script src="./view/js/locationCreate.js" type="application/javascript"></script>
+<!--<script src="./view/js/locationAddEvents.js" type="application/javascript"></script>-->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
+        async defer></script>
+
+<!-- Populate lists script -->
+<script src="./view/js/adminNavigation.js" type="application/javascript"></script>
+</body>
+=======
 <!--
     Author: Raine Padilla | Toygan Sevim
       Date: 4/14/2018
@@ -232,4 +468,5 @@
 <!-- Populate lists script -->
 <script src="./view/js/adminNavigation.js" type="application/javascript"></script>
 </body>
+>>>>>>> 31940192126fa656935d7fb6ddd240c6160765db
 </html>

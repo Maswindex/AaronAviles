@@ -32,9 +32,10 @@ $event['start_date']['month'] = $month;
 $event['start_date']['day'] = $day;
 $event['start_date']['year'] = $year;
 $event['text']['headline'] = $eventName;
-$event['text']['text'] = $eventDescription . " - " . $eventCategory;
+$event['text']['text'] = $eventDescription;
+$event['group'] = $eventCategory;
 
-print_r($event);
+echo "<h1>Event added! Please wait while you're re-directed.</h1>";
 
 
 // Pull the contents of the events.json file
