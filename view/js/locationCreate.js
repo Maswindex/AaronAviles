@@ -68,10 +68,9 @@ function updateJsonFile(place, finalList) {
     //Events | BEGIN from 1 to avoid the indicator
     if (!finalList.length <= 1) {
         for (var i = 1; i < finalList.length; i++) {
-            locationObject.events += finalList[i];
+            locationObject.events.push(finalList[i]);
         }
     }
-
 
     //Use the uploaded image path / URL
     locationObject.icon = "https://upload.wikimedia.org/wikipedia/en/e/e7/Death_Note_L_ident.jpg";
