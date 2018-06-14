@@ -90,7 +90,17 @@ function populateForm(category, selected)
                 document.getElementById("eventContent").value = events[i].text.text;
 
                 // Event Category
+                $('.group').each(function(category){
 
+                    if(category.value == events[i].group)
+                    {
+                        category.find("option").setAttribute(selected, true);
+                    }
+                    else
+                    {
+                        category.find("option").setAttribute(selected, false);
+                    }
+                });
 
                 // Event Date
                 eventDate = events[i].start_date.year + "-" + events[i].start_date.month + "-"
