@@ -13,5 +13,8 @@ session_start();
 unset($_SESSION['username']);
 session_destroy();
 
+define("AA_HOMEPAGE", "www.tsevim.greenriverdev.com/355/Aaronaviles");
+
+header('Location: ' . AA_HOMEPAGE);
 
 

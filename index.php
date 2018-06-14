@@ -72,7 +72,6 @@ $f3->route('GET|POST /login', function ()
 //location upload
 $f3->route('POST|GET /logout', function ($f3)
 {
-    $view = new View();
     if(empty($_SESSION['user']))
     {
         $f3->reroute('/login');
