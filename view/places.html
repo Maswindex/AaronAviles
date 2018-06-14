@@ -9,6 +9,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -42,6 +43,7 @@
         </button>
 
         <div class="collapse justify-content-around navbar-collapse col col-lg-4" id="navbarSupportedContent">
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link p-0 mr-4 active" href="./places">Places</a>
@@ -51,16 +53,43 @@
                     <a class="nav-link p-0 mr-4" href="./">Life</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link p-0 mr-4" href="./admin">Admin</a>
+                <li class="nav-item" id="mediaExpanded">
+                    <!-- Default dropright button -->
+                    <div class="nav-item btn-group dropright">
+
+                        <a class="dropdown-toggle nav-link p-0 mr-4" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Stay connected</a>
+
+                        <!--//social media icons-->
+                        <div class="dropdown-menu">
+                            <!-- Dropdown menu links -->
+                            <!--Facebook-->
+                            <a href="https://www.facebook.com/aaron.aviles" class="social-menu"><i class="fa fa-facebook"></i></a>
+                            <!--Twitter-->
+                            <a href="https://twitter.com/aaronaviles" class="social-menu"><i class="fa fa-twitter"></i></a>
+                            <!--Google +-->
+                            <a href="https://www.instagram.com/aaronaviles/" class="social-menu"> <i class="fa fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/aaronaviles/" class="social-menu"> <i class="fa fa-link" aria-hidden="true"></i></a>
+
+                        </div>
+                    </div>
                 </li>
 
             </ul>
-            <!--<form class="form-inline my-2 my-lg-0">-->
-            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-            <!--</form>-->
         </div>
+
+        <!--collapsed socialmedia-->
+        <div class="collapse navbar-collapse justify-content-end col col-lg-4 text-right" id="icons">
+            <!--Facebook-->
+            <a class="social-menu-big mx-1"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/aaronaviles" class="social-menu-big mx-1"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/aaronaviles/" class="social-menu-big mx-1"><i
+                    class="fa fa-instagram"></i></a>
+            <a class="social-menu-big mx-1"><i class="fa fa-ellipsis-h"></i></a>
+
+        </div>
+
+
     </div>
 </nav>
 
