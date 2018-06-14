@@ -25,7 +25,302 @@ function myMap() {
             lat: 39.8283,
             lng: -98.5795
         },
-        zoom: 4
+        zoom: 4,
+        styles: [
+        {
+            "elementType": "labels.icon",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#616161"
+                }
+            ]
+        },
+        {
+            "elementType": "labels.text.stroke",
+            "stylers": [
+                {
+                    "color": "none"
+                }
+            ]
+        },
+        {
+            "featureType": "administrative.land_parcel",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#bdbdbd"
+                }
+            ]
+        },
+        {
+            "featureType": "administrative.neighborhood",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "stylers": [
+                {
+                    "color": "#28cb80"
+                },
+                {
+                    "saturation": 100
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#1bcf95"
+                },
+                {
+                    "saturation": 100
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#33ca7e"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "geometry.stroke",
+            "stylers": [
+                {
+                    "color": "#20b065"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape.natural.terrain",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#33ca7e"
+                },
+                {
+                    "saturation": 100
+                }
+            ]
+        },
+        {
+            "featureType": "landscape.natural.terrain",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#33ca7e"
+                },
+                {
+                    "saturation": 100
+                }
+            ]
+        },
+        {
+            "featureType": "landscape.natural.terrain",
+            "elementType": "geometry.stroke",
+            "stylers": [
+                {
+                    "color": "#33ca7e"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#eeeeee"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "labels.text",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#757575"
+                }
+            ]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#e5e5e5"
+                }
+            ]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#9e9e9e"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#1ee185"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#757575"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#dadada"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#0c3003"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#616161"
+                }
+            ]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#9e9e9e"
+                }
+            ]
+        },
+        {
+            "featureType": "transit.line",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#e5e5e5"
+                }
+            ]
+        },
+        {
+            "featureType": "transit.line",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#008040"
+                }
+            ]
+        },
+        {
+            "featureType": "transit.station",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#eeeeee"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#62cbe6"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "labels.text",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#9e9e9e"
+                }
+            ]
+        }
+    ]
     };
 
     var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -52,7 +347,7 @@ function myMap() {
                         heightUnit: 'px'
                     }
                 },
-                animation: google.maps.Animation.BOUNCE,
+                //animation: google.maps.Animation.BOUNCE,
                 map: map
             }
 
@@ -183,7 +478,22 @@ function createDate(start_date) {
     Activates when clicked on in modal              */
 function displayEvent(eventHeadline) {
     var event = $('#targetEvent');
-
     event.attr('value', eventHeadline);
     $('#goToEvent').submit();
 }
+
+function formatIcons(target) {
+    var checkExist = setInterval(function () {
+        if ($(target).length) {
+            console.log("Exists: " + target);
+            $(target).css("border-radius", "100%");
+            $(target).css("border", "solid black");
+            $(target).css("animation", "breathing 3s ease-out infinite normal");
+            $(target).css("-webkit-animation", "breathing 3s ease-out infinite normal");
+            $(target).css("-webkit-font-smoothing", "antialiased");
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+
+formatIcons(".gm-style > div > div > div > div > img");
