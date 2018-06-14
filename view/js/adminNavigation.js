@@ -20,6 +20,8 @@ $('#viewEvents').click(function () {
     $('#eventForm').show();
     $('#locationForm').hide();
     $('#partnersForm').hide();
+    $('.added-list').hide();
+
     populateList("events");
 
 

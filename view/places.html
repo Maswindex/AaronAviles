@@ -10,7 +10,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -23,6 +22,10 @@
     <!--link css-->
     <link rel="stylesheet" href="styles/home_styles.css">
     <link rel="stylesheet" href="styles/places.css">
+
+    <style>
+
+    </style>
 
 </head>
 <body class="bg fixed-top">
@@ -40,6 +43,7 @@
         </button>
 
         <div class="collapse justify-content-around navbar-collapse col col-lg-4" id="navbarSupportedContent">
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link p-0 mr-4 active" href="./places">Places</a>
@@ -48,22 +52,57 @@
                 <li class="nav-item">
                     <a class="nav-link p-0 mr-4" href="./">Life</a>
                 </li>
+
+                <li class="nav-item" id="mediaExpanded">
+                    <!-- Default dropright button -->
+                    <div class="nav-item btn-group dropright">
+
+                        <a class="dropdown-toggle nav-link p-0 mr-4" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Stay connected</a>
+
+                        <!--//social media icons-->
+                        <div class="dropdown-menu">
+                            <!-- Dropdown menu links -->
+                            <!--Facebook-->
+                            <a href="https://www.facebook.com/aaron.aviles" class="social-menu"><i class="fa fa-facebook"></i></a>
+                            <!--Twitter-->
+                            <a href="https://twitter.com/aaronaviles" class="social-menu"><i class="fa fa-twitter"></i></a>
+                            <!--Google +-->
+                            <a href="https://www.instagram.com/aaronaviles/" class="social-menu"> <i class="fa fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/aaronaviles/" class="social-menu"> <i class="fa fa-link" aria-hidden="true"></i></a>
+
+                        </div>
+                    </div>
+                </li>
+
             </ul>
         </div>
+
+        <!--collapsed socialmedia-->
+        <div class="collapse navbar-collapse justify-content-end col col-lg-4 text-right" id="icons">
+            <!--Facebook-->
+            <a class="social-menu-big mx-1"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/aaronaviles" class="social-menu-big mx-1"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/aaronaviles/" class="social-menu-big mx-1"><i
+                    class="fa fa-instagram"></i></a>
+            <a class="social-menu-big mx-1"><i class="fa fa-ellipsis-h"></i></a>
+
+        </div>
+
+
     </div>
 </nav>
 
-<div class="container h-100">
+<div class="container h-100" >
     <div class="row h-100 justify-content-center">
-        <div class="container py-5 col-12 mx-auto h-100" id="main-container">
-            <div id="map" class="mt-2 h-100 w-100"></div>
+        <div class="container pt-5 col-12 mx-auto h-100" id="main-container">
+            <div id="map" class="h-100 w-100"></div>
         </div>
     </div>
 </div>
 
 <!-- List location events Modal -->
-<div class="modal fade" id="relatedEvents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="relatedEvents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -81,8 +120,7 @@
 </div>
 
 <!-- Display selected event Modal -->
-<div class="modal fade" id="selectedEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="selectedEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -98,7 +136,7 @@
     </div>
 </div>
 
- 
+
 <!--jQuery-->
 <script
         src="https://code.jquery.com/jquery-3.3.1.js"
