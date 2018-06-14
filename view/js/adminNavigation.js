@@ -11,6 +11,8 @@ $('#locationForm').hide();
 $('#partnersForm').hide();
 $('.added-list').hide();
 
+populateList("events");
+
 
 // Show events
 $('#viewEvents').click(function () {
@@ -18,8 +20,9 @@ $('#viewEvents').click(function () {
     $('#eventForm').show();
     $('#locationForm').hide();
     $('#partnersForm').hide();
-
     populateList("events");
+
+
     return false;
 });
 
@@ -58,31 +61,25 @@ $('.list-group-item').click(function () {
 
 // Click & activate a list item, then run populate function
 $('#changeList').click(function () {
-    $('.list-group-item').click(function(){
+    $('.list-group-item').click(function () {
         $('.list-group-item.active').removeClass('active');
         $(this).addClass('active');
 
-        if($(this).hasClass('eventItem'))
-        {
+        if ($(this).hasClass('eventItem')) {
             populateForm("events", $(this).html());
         }
-        else if($(this).hasClass('locationItem'))
-        {
+        else if ($(this).hasClass('locationItem')) {
             populateForm("locations", $(this).html());
         }
     });
 });
 
 
-function populateForm(category, selected)
-{
-    if(category == "events")
-    {
+function populateForm(category, selected) {
+    if (category == "events") {
         form = document.getElementById("eventForm");
-        for(var i = 0; i < events.length; i++)
-        {
-            if(events[i].text.headline == selected)
-            {
+        for (var i = 0; i < events.length; i++) {
+            if (events[i].text.headline == selected) {
                 // Fill the event name
                 document.getElementById("eventName").value = events[i].text.headline;
 
@@ -105,16 +102,14 @@ function populateForm(category, selected)
             }
         }
     }
-    else if(category == "locations")
-    {
+    else if (category == "locations") {
         form = document.getElementById("locationForm");
 
     }
 }
 
 //  Populate the lists with events/locations/partners pulled from json
-function populateList(category)
-{
+function populateList(category) {
     display(category);
 
     function fillLocations() {
@@ -152,26 +147,22 @@ function populateList(category)
         }();
     }
 
-    function display(category)
-    {
-        if(category == "events")
-        {
+    function display(category) {
+        if (category == "events") {
             fillEvents();
             var eventList = document.getElementById("changeList");
             eventList.innerHTML = "";
-            for(var i = 0; i < events.length; i++)
-            {
+            for (var i = 0; i < events.length; i++) {
                 var item = '<a href="#" class="list-group-item eventItem">' + events[i].text.headline + '</a>';
                 eventList.innerHTML += item;
             }
         }
 
-        else if(category == "locations") {
+        else if (category == "locations") {
             fillLocations();
             var locationList = document.getElementById("changeList");
             locationList.innerHTML = "";
-            for (var i = 0; i < locations.length; i++)
-            {
+            for (var i = 0; i < locations.length; i++) {
                 var item = '<a href="#" class="list-group-item locationItem">' + locations[i].title + '</a>';
                 locationList.innerHTML += item;
             }
