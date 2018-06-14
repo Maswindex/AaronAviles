@@ -1,11 +1,14 @@
 "use strict";
-<!--
-    Author: Toygan Sevim
-      Date: 4/14/2018
-   Updated: 6/14/2018
-      Team: Remote Workers
--->
+/**
+ *
+ <!--
+ Author: Toygan Sevim
+ Date: 4/14/2018
+ Updated: 6/14/2018
+ Team: Remote Workers
+ -->
 
+ */
 var autocomplete;
 
 var events = [];
@@ -85,6 +88,10 @@ function updateJsonFile(place, finalList) {
 
     locationObject = JSON.stringify(locationObject);
 
+    var currentSize = locationObject.length;
+
+    console.log("current size before update:" + currentSize);
+
 
     //Send validation
     $.post('././model/add-location.php',
@@ -96,7 +103,13 @@ function updateJsonFile(place, finalList) {
         function (results) {
 
 
-        });
+            var array = results[0];
+            // var array1 = results.locations[0];
+
+            console.log("try 1 " + array + "\n" + "try" + results);
+
+        }
+    );
 }
 
 /**

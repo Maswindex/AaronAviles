@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: toygan
- * Date: 6/2/18
- * Time: 3:19 AM
+ * aaronLogin.php
+ * Author: Toygan Sevim
+ * Date: 6/14/18
+ *
  *
  * This file will instantiate the first checks for the login
  */
