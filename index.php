@@ -1,31 +1,38 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Tyler Bezera
- * Date: 4/30/2018
- * Time: 5:22 PM
+ *
+ * Author: Raine Padilla | Toygan Sevim | Mason Hernandez
+ * Date: 4/14/2018
+ * Updated: 6/14/2018
+ * Team: Remote Workers
+ *
  */
 //require the autoload file
-error_reporting(E_ALL);
-ini_set("display_errors", TRUE);
+//error_reporting(E_ALL);
+//ini_set("display_errors", TRUE);
 
 require_once 'vendor/autoload.php';
 
 //create an instance of the Base class
 session_start();
 
+
+
 $f3 = Base::instance();
+
+
 
 //Main Route to the timeline ->for now
 $f3->route('GET|POST /', function ($f3)
 {
-    if (isset($_POST['targetEvent'])) {
+    if(isset($_POST['targetEvent']))
+    {
         $trimmed = strtolower(trim($_POST['targetEvent']));
         $trimmed = preg_replace("/([^A-Za-z0-9])+/", "-", $trimmed);
-        $trimmed = $trimmed.'-marker';
+        $trimmed = $trimmed . '-marker';
 
         $f3->set('targeted', true);
-        $f3->set('targetEvent', '#'.$trimmed);
+        $f3->set('targetEvent', '#' . $trimmed);
     }
 
     echo Template::instance()->render('view/timeline.html');

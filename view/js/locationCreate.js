@@ -1,5 +1,10 @@
 "use strict";
-
+<!--
+    Author: Toygan Sevim
+      Date: 4/14/2018
+   Updated: 6/14/2018
+      Team: Remote Workers
+-->
 
 var autocomplete;
 
@@ -67,7 +72,7 @@ function updateJsonFile(place, finalList) {
     locationObject.events = [];
     locationObject.title = place.name;
 
-    //Events | BEGIN from 1 to avoid the indicator
+    //Add Related Events | BEGIN from 1 to avoid the indicator
     if (!finalList.length <= 1) {
         for (var i = 1; i < finalList.length; i++) {
             locationObject.events.push(finalList[i]);
@@ -80,6 +85,8 @@ function updateJsonFile(place, finalList) {
 
     locationObject = JSON.stringify(locationObject);
 
+
+    //Send validation
     $.post('././model/add-location.php',
         {
             postLocation: true,
@@ -90,10 +97,6 @@ function updateJsonFile(place, finalList) {
 
 
         });
-
-    console.log(place);
-
-
 }
 
 /**
@@ -103,8 +106,8 @@ function createRelatedEvents() {
 
 //Fill the checkbox / dropdown
     for (var i = 0; i < events.length; i++) {
-        // console.log("menu" + events[i].text.headline);
 
+        //If there are given headers add to the list
         if (events[i].text.headline != "" || events[i].text.headline != " ") {
 
             $(".dropdown-menu").append('<a class="dropdown-item update-item" href="#">' + events[i].text.headline + "</a>");
@@ -127,7 +130,7 @@ function pickRelatedEvents() {
             $(".added-list").append('<a class="list-group-item selected pr-1">' + $(this).html() + "</a>");
         }
         else {
-            console.log("Was already in" + $(this).html());
+            console.log("Was already in: " + $(this).html());
         }
 
     });
@@ -168,20 +171,6 @@ function fillLocations() {
         });
         return tmp;
     }();
-}
-
-/**
- * This function will not hold a value until remove/ uses siblings to add and remove badges
- */
-function saveEvents() {
-
-    //If there is a selected events list
-    if ($(".selected").siblings().length > 1) {
-
-        //This will save and have report
-        // $(".selected").val = "<span class='badge badge-pill badge-danger'>Remove</span>";
-    }
-
 }
 
 google.maps.event.addDomListener(window, 'load', test);

@@ -1,7 +1,7 @@
 <!--
-    Author: Raine Padilla | Toygan Sevim
+    Author: Raine Padilla | Toygan Sevim | Mason Hernandez
       Date: 4/14/2018
-   Updated: 5/29/2018
+   Updated: 6/14/2018
       Team: Remote Workers
 -->
 <!DOCTYPE html>
@@ -18,9 +18,7 @@
 
 
     <style>
-        html, body {
-            height: 100% !important;
-        }
+
     </style>
 
 
@@ -104,15 +102,10 @@
                                       rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="eventImage">Event Images</label>
-                            <input type="file" class="form-control-file" id="eventImage"
-                                   name="eventImage[]">
-                        </div>
-                        <div class="form-group">
                             <label for="eventCategory">Event Category</label>
                             <select class="form-control" id="eventCategory" name="eventCategory">
                                 <option selected class="group" value="Entertainment">Entertainment</option>
-                                
+
                                 <option class="group" value="Hospitality">Hospitality</option>
 
                                 <option class="group" value="Travel">Travel</option>
@@ -154,8 +147,8 @@
                         <h5 class="divider">Event Images</h5>
                         <div class="form-group">
                             <label for="eventImage">Event Images</label>
-                            <input type="file" class="form-control-file" id="imageEvent"
-                                   name="eventImage[]">
+                            <input type="file" class="form-control-file" id="eventImage"
+                                   name="eventImage">
 
 
                             <!--if (move_uploaded_file($_FILES["eventImage"]["tmp_name"][$i], $target_file))-->
@@ -225,9 +218,8 @@
         crossorigin="anonymous"></script>
 
 
+<!--//location scripts-->
 <script src="./view/js/locationCreate.js" type="application/javascript"></script>
-<!--<script src="./view/js/locationAddEvents.js" type="application/javascript"></script>-->
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
         async defer></script>
 

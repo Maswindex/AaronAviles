@@ -13,3 +13,8 @@
 
     }
 }
+
+.gm-style > div > div > div > div > img {
+    border-radius: 100%;
+    border: solid black;
+}
