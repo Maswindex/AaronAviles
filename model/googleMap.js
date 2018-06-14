@@ -2,7 +2,7 @@
  *        author: Mason Hernandez
  *       version: 1.0
  *      creation: 05/12/2018
- *     last edit: 05/29/2018
+ *     last edit: 06/13/2018
  *     file name: googleMap.js
  *   description: file builds the necessary functions and
  *                markers in google map to be displayed
@@ -25,14 +25,11 @@ function myMap() {
             lat: 39.8283,
             lng: -98.5795
         },
-        zoom: 2
+        zoom: 4
     };
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-    google.maps.event.addListenerOnce(map, 'idle', function () {
-        // do something only the first time the map is loaded
-        $(".gmnoprint").addClass("marker-parent");
 
-    });
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+
     //For every location object, create a marker, add a event listener -click, to display related items
     //create each marker
     for (var i = 0; i < locations.length; i++) {
@@ -64,8 +61,6 @@ function myMap() {
             displayEvents(this.title);
         });
     }
-
-    // $( ".gm-style > div > div > div > div > img" ).addClass('markers');
 }
 
 //fills locations with locations from the json file
@@ -145,7 +140,7 @@ function addEventToModal(index) {
 
     //creates the list item for the related events
     $("#eventList").append(
-        "<a href='#' class='list-group-item list-group-item-action flex-column align-items-start event' id='e" + index + "'>" +
+        "<a type='Submit' href='#' class='list-group-item list-group-item-action flex-column align-items-start event' id='e" + index + "'>" +
         "<div class='d-flex w-100 justify-content-between'>" +
         "<h5 class='mb-1'>" + event.text.headline + "</h5>" +
         "<small>" + date + "</small>" +
@@ -187,19 +182,8 @@ function createDate(start_date) {
 /*  Displays the event in the selected event modal
     Activates when clicked on in modal              */
 function displayEvent(eventHeadline) {
-    var event;
+    var event = $('#targetEvent');
 
-    for (var i = 0; i < events.length; i++) {
-        event = events[i];
-
-        if (event.text.headline == eventHeadline) {
-            $("#eventTitle").html(event.text.headline);
-            $("#eventText").html(event.text.text);
-        }
-    }
-    $("#selectedEvent").modal();
+    event.attr('value', eventHeadline);
+    $('#goToEvent').submit();
 }
-
-$("document").ready(function () {
-    $(".gmnoprint").addClass("marker-parent");
-});

@@ -17,10 +17,18 @@ session_start();
 $f3 = Base::instance();
 
 //Main Route to the timeline ->for now
-$f3->route('GET /', function ()
+$f3->route('GET|POST /', function ($f3)
 {
-    $view = new View();
-    echo $view->render('view/timeline.html');
+    if (isset($_POST['targetEvent'])) {
+        $trimmed = strtolower(trim($_POST['targetEvent']));
+        $trimmed = preg_replace("/([^A-Za-z0-9])+/", "-", $trimmed);
+        $trimmed = $trimmed.'-marker';
+
+        $f3->set('targeted', true);
+        $f3->set('targetEvent', '#'.$trimmed);
+    }
+
+    echo Template::instance()->render('view/timeline.html');
 });
 
 /*

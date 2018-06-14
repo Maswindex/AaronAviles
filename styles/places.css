@@ -1,0 +1,15 @@
+#markerLayer img {
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+
+@keyframes example {
+    from{
+
+    }
+    to {
+
+    }
+}

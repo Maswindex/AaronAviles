@@ -1,7 +1,4 @@
 <!doctype html>
-<!--Toygan Sevim | Mason Hernandez-->
-<!--This file : places.html-->
-<!--It will show the locations of the events that aaron have created on google maps api. -->
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -17,6 +14,7 @@
 
     <!--link css-->
     <link rel="stylesheet" href="styles/home_styles.css">
+    <link rel="stylesheet" href="styles/places.css">
 
     <style>
         .gm-style > div > div > div > div > img {
@@ -35,13 +33,11 @@
             AaronAviles.com
         </a>
 
-        <!--//Remote Button that gets created in small screen-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!--//Nav bar Items-->
         <div class="collapse justify-content-around navbar-collapse col col-lg-4" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -52,6 +48,9 @@
                     <a class="nav-link p-0 mr-4" href="./">Life</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link p-0 mr-4" href="./admin">Admin</a>
+                </li>
 
             </ul>
             <!--<form class="form-inline my-2 my-lg-0">-->
@@ -62,8 +61,7 @@
     </div>
 </nav>
 
-<!--//Base container-->
-<div class="container h-100">
+<div class="container h-100" >
     <div class="row h-100 justify-content-center">
         <div class="container pt-5 col-12 mx-auto h-100" id="main-container">
             <div id="map" class="h-100 w-100"></div>
@@ -72,16 +70,16 @@
 </div>
 
 <!-- List location events Modal -->
-<div class="modal fade" id="relatedEvents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="relatedEvents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Related events</h5>
             </div>
-            <div class="modal-body">
+            <form class="modal-body" method="post" action="./" id="goToEvent">
+                <input name="targetEvent" id="targetEvent" class="invisible">
                 <div class="list-group" id="eventList"></div>
-            </div>
+            </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -90,8 +88,7 @@
 </div>
 
 <!-- Display selected event Modal -->
-<div class="modal fade" id="selectedEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="selectedEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -117,16 +114,6 @@
 <!-- Google Maps Script -->
 <script src="model/googleMap.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&callback=myMap"></script>
-
-<script>
-
-    // $( ".gm-style > div > div > div > div > img" ).css('border-radius', '100%');
-    // $(".gmnoprint").addClass("marker-parent");
-
-    // for(;;) {
-    //     $( ".gm-style > div > div > div > div > img" ).toggle('markers');
-    // }
-</script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

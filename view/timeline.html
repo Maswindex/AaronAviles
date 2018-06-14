@@ -106,11 +106,14 @@
 
 <!--Rendering time-line from javascript-->
 <script type="text/javascript">
-
     //timeline-embed is id if parent div holding timeline
-    //model/test_events.json
     window.timeline = new TL.Timeline('timeline-embed', 'model/test_events.json');
 </script>
+
+<check if="{{@targeted}}">
+    <script src="model/targetEvent.js"></script>
+    <script>target('{{@targetEvent}}')</script>
+</check>
 
 <!--jQuery first, then Popper.js, then Bootstrap JS-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
