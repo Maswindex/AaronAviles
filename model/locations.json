@@ -2,290 +2,41 @@
     "locations": [
         {
             "position": {
-                "lat": 47.3408311,
-                "lng": -122.2378483
-            },
-            "events": [],
-            "title": "ADESA Seattle",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3408311,
-                "lng": -122.2378483
-            },
-            "events": [],
-            "title": "ADESA Seattle",
-            "icon": "https:\/\/commons.wikimedia.org\/wiki\/File:Alte_Amtei,_auch_Haus_Beutelspacher_-_geo.hlipp.de_-_17712.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3287465,
-                "lng": -122.2208888
-            },
-            "events": [],
-            "title": "Advance Auto Parts",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3287465,
-                "lng": -122.2208888
-            },
-            "events": [],
-            "title": "Advance Auto Parts",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.4435903,
-                "lng": -122.2960726
-            },
-            "events": [],
-            "title": "SeaTac",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.4435903,
-                "lng": -122.2960726
-            },
-            "events": [],
-            "title": "SeaTac",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.0378741,
-                "lng": -122.9006951
-            },
-            "events": [],
-            "title": "Olympia",
-            "icon": "https:\/\/commons.wikimedia.org\/wiki\/File:Alte_Amtei,_auch_Haus_Beutelspacher_-_geo.hlipp.de_-_17712.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3408311,
-                "lng": -122.2378483
-            },
-            "events": [],
-            "title": "ADESA Seattle",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
                 "lat": 47.2990241,
                 "lng": -122.2437388
             },
-            "events": [],
+            "events": "Beach ActionNBA FINALSExploring the sky with a Drone",
             "title": "adidas Outlet",
             "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
         },
         {
             "position": {
-                "lat": 37.7749295,
-                "lng": -122.4194155
+                "lat": 33.93911,
+                "lng": 67.709953
             },
-            "events": [],
-            "title": "San Francisco",
+            "events": [
+                "NBA FINALS",
+                "Beach Action",
+                "Exploring the sky with a Drone",
+                "Outdoors exploring inner peace."
+            ],
+            "title": "Afghanistan",
             "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
         },
         {
             "position": {
-                "lat": 47.4435903,
-                "lng": -122.2960726
+                "lat": 47.3046293,
+                "lng": -122.2251614
             },
-            "events": [],
-            "title": "SeaTac",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.4435903,
-                "lng": -122.2960726
-            },
-            "events": [],
-            "title": "SeaTac",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3073228,
-                "lng": -122.2284532
-            },
-            "events": [],
-            "title": "Auburn",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.2547385,
-                "lng": -122.1872927
-            },
-            "events": [],
-            "title": "ASD Systems Inc",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.2990241,
-                "lng": -122.2437388
-            },
-            "events": [],
-            "title": "adidas Outlet",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.2990241,
-                "lng": -122.2437388
-            },
-            "events": [],
-            "title": "adidas Outlet",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3240739,
-                "lng": -122.2203364
-            },
-            "events": [],
-            "title": "Saar's Super Saver",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3712144,
-                "lng": -122.2016681
-            },
-            "events": [],
-            "title": "Asian Pacific Market",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3712144,
-                "lng": -122.2016681
-            },
-            "events": [],
-            "title": "Asian Pacific Market",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3712144,
-                "lng": -122.2016681
-            },
-            "events": [],
-            "title": "Asian Pacific Market",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3712144,
-                "lng": -122.2016681
-            },
-            "events": [],
-            "title": "Asian Pacific Market",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3712144,
-                "lng": -122.2016681
-            },
-            "events": [],
-            "title": "Asian Pacific Market",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3712144,
-                "lng": -122.2016681
-            },
-            "events": [],
-            "title": "Asian Pacific Market",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3712144,
-                "lng": -122.2016681
-            },
-            "events": [],
-            "title": "Asian Pacific Market",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3094348,
-                "lng": -122.2290452
-            },
-            "events": [],
-            "title": "Adsero Kelly J",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3094348,
-                "lng": -122.2290452
-            },
-            "events": [],
-            "title": "Adsero Kelly J",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.3696071,
-                "lng": -122.2041971
-            },
-            "events": [],
-            "title": "Kent Super Buffet",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.5762095,
-                "lng": -122.3336934
-            },
-            "events": [],
-            "title": "Aston Manor",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.5762095,
-                "lng": -122.3336934
-            },
-            "events": [],
-            "title": "Aston Manor",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.5762095,
-                "lng": -122.3336934
-            },
-            "events": [],
-            "title": "Aston Manor",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 47.5762095,
-                "lng": -122.3336934
-            },
-            "events": [],
-            "title": "Aston Manor",
-            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
-        },
-        {
-            "position": {
-                "lat": 50.503887,
-                "lng": 4.469936
-            },
-            "events": [],
-            "title": "Belgium",
+            "events": [
+                "NBA FINALS",
+                "Exploring the sky with a Drone",
+                "First Meeting",
+                "Where it all Begin",
+                "",
+                "Beach Action"
+            ],
+            "title": "Burger King",
             "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
         }
     ]
