@@ -1,13 +1,14 @@
 <!--
-    Author: Raine Padilla | Toygan Sevim
+    Author: Raine Padilla | Toygan Sevim | Mason Hernandez
       Date: 4/14/2018
-   Updated: 5/29/2018
+   Updated: 6/14/2018
       Team: Remote Workers
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,9 +19,7 @@
 
 
     <style>
-        html, body {
-            height: 100% !important;
-        }
+
     </style>
 
 
@@ -104,16 +103,13 @@
                                       rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="eventImage">Event Images</label>
-                            <input type="file" class="form-control-file" id="eventImage"
-                                   name="eventImage[]">
-                        </div>
-                        <div class="form-group">
                             <label for="eventCategory">Event Category</label>
                             <select class="form-control" id="eventCategory" name="eventCategory">
-                                <option selected>Entertainment</option>
-                                <option>Hospitality</option>
-                                <option>Travel</option>
+                                <option selected class="group" value="Entertainment">Entertainment</option>
+
+                                <option class="group" value="Hospitality">Hospitality</option>
+
+                                <option class="group" value="Travel">Travel</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -126,7 +122,9 @@
                             <label for="urlCaption">Caption</label>
                             <input type="text" class="form-control" id="urlCaption" name="urlCaption">
                         </div>
-                        <button type="submit" class="btn btn-success btn-lg float-right">Add Event</button>
+                        <button type="submit" id="eventAddButton" class="btn btn-success btn-lg float-right">
+                            Add Event
+                        </button>
                     </form>
                 </div>
 
@@ -150,8 +148,8 @@
                         <h5 class="divider">Event Images</h5>
                         <div class="form-group">
                             <label for="eventImage">Event Images</label>
-                            <input type="file" class="form-control-file" id="imageEvent"
-                                   name="eventImage[]">
+                            <input type="file" class="form-control-file" id="eventImage"
+                                   name="eventImage">
 
 
                             <!--if (move_uploaded_file($_FILES["eventImage"]["tmp_name"][$i], $target_file))-->
@@ -184,76 +182,27 @@
                     </form>
                 </div>
 
-                <!--&lt;!&ndash;Partners form&ndash;&gt;-->
-                <!--<div class="col-6 container bg-light py-3" id="partnersForm">-->
-                <!--<h5>Partners Form</h5>-->
-                <!--<form class="form" action="#" method="post" role="form"-->
-                <!--autocomplete="off">-->
-                <!--<div class="form-group">-->
-                <!--<label for="inputLocation">Search Place</label>-->
-                <!--<input type="text" class="form-control" name="inputLocation">-->
-                <!--</div>-->
-
-                <!--&lt;!&ndash;Fill the address&ndash;&gt;-->
-                <!--<div class="form-group">-->
-                <!--<label for="country">Country</label>-->
-                <!--<input type="text" class="form-control" name="country">-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label for="city">City</label>-->
-                <!--<input type="text" class="form-control" name="city">-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label for="state">State</label>-->
-                <!--<input type="text" class="form-control" name="state">-->
-                <!--</label>-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label for="latitude">Latitude</label>-->
-                <!--<input type="text" class="form-control" name="latitude">-->
-                <!--</label>-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<label for="longitude">Longitude</label>-->
-                <!--<input type="text" class="form-control" name="longitude">-->
-                <!--</label>-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                <!--<button type="submit" class="btn btn-success btn-lg float-right">-->
-                <!--Add Location-->
-                <!--</button>-->
-                <!--</div>-->
-                <!--</form>-->
-                <!--</div>-->
-
                 <!--Changing list-->
                 <div class="col-6 container bg-light py-3">
-                    <div class="list-group">
-                        <a class="list-group-item">
-                            First item
-                        </a>
-                        <a class="list-group-item">
-                            Second item
-                        </a>
-                        <a class="list-group-item">
-                            Third item
-                        </a>
+                    <div class="list-group" id="changeList">
+
                     </div>
+                </div>
 
 
-                    <div class="list-group added-list mb-2">
-                        <a class="list-group-item selected pr-1">Picked Events:</a>
-                    </div>
-
+                <div class="list-group added-list mb-2">
+                    <a class="list-group-item selected pr-1">Picked Events:</a>
                 </div>
 
             </div>
 
         </div>
-        <!-- End Main Column -->
 
     </div>
-    <!-- End Main Content Row -->
+    <!-- End Main Column -->
+
+</div>
+<!-- End Main Content Row -->
 
 </div>
 <!-- End Body Container -->
@@ -270,9 +219,8 @@
         crossorigin="anonymous"></script>
 
 
+<!--//location scripts-->
 <script src="./view/js/locationCreate.js" type="application/javascript"></script>
-<!--<script src="./view/js/locationAddEvents.js" type="application/javascript"></script>-->
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-2_rdKQvJ07DUYGnPbOmtv-okJ4iimuc&libraries=places&language=en&callback=test"
         async defer></script>
 

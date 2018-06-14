@@ -10,7 +10,10 @@ body, html {
 a.social-menu-big.mx-1 {
     padding-right: 5px;
     font-size: 2rem !important;
+    text-decoration: none;
     text-size-adjust: auto;
+    color: black;
+
 }
 
 a.social-menu {

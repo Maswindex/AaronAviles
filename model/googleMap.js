@@ -2,7 +2,7 @@
  *        author: Mason Hernandez
  *       version: 1.0
  *      creation: 05/12/2018
- *     last edit: 06/13/2018
+ *     last edit: 06/14/2018
  *     file name: googleMap.js
  *   description: file builds the necessary functions and
  *                markers in google map to be displayed

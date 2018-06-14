@@ -2,38 +2,258 @@
     "locations": [
         {
             "position": {
-                "lat": 47.3408311,
-                "lng": -122.2378483
+                "lat": 47.2990241,
+                "lng": -122.2437388
             },
-            "events": [],
-            "title": "ADESA Seattle",
+            "events": "Beach ActionNBA FINALSExploring the sky with a Drone",
+            "title": "adidas Outlet",
             "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
         },
         {
             "position": {
-                "lat": 47.3408311,
-                "lng": -122.2378483
+                "lat": 33.93911,
+                "lng": 67.709953
             },
-            "events": [],
-            "title": "ADESA Seattle",
+            "events": [
+                "NBA FINALS",
+                "Beach Action",
+                "Exploring the sky with a Drone",
+                "Outdoors exploring inner peace."
+            ],
+            "title": "Afghanistan",
             "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
         },
         {
             "position": {
-                "lat": 47.3287465,
-                "lng": -122.2208888
+                "lat": 47.3046293,
+                "lng": -122.2251614
             },
-            "events": [],
-            "title": "Advance Auto Parts",
+            "events": [
+                "NBA FINALS",
+                "Exploring the sky with a Drone",
+                "First Meeting",
+                "Where it all Begin",
+                "",
+                "Beach Action"
+            ],
+            "title": "Burger King",
             "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
         },
         {
             "position": {
-                "lat": 47.3287465,
-                "lng": -122.2208888
+                "lat": 47.2882505,
+                "lng": -122.1885356
+            },
+            "events": [
+                "Group Testing",
+                "Beach Action",
+                "Class",
+                "It was an amazing experience at CG Technology Event."
+            ],
+            "title": "Auburn Way South",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.2882505,
+                "lng": -122.1885356
+            },
+            "events": [
+                "Group Testing",
+                "Beach Action",
+                "Class",
+                "It was an amazing experience at CG Technology Event."
+            ],
+            "title": "Auburn Way South",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.2882505,
+                "lng": -122.1885356
+            },
+            "events": [
+                "Group Testing",
+                "Beach Action",
+                "Class",
+                "It was an amazing experience at CG Technology Event."
+            ],
+            "title": "Auburn Way South",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.3712144,
+                "lng": -122.2016681
             },
             "events": [],
-            "title": "Advance Auto Parts",
+            "title": "Asian Pacific Market",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.299903,
+                "lng": -122.243478
+            },
+            "events": [],
+            "title": "Dave & Buster's",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.5920454,
+                "lng": -122.2445123
+            },
+            "events": [],
+            "title": "Aubrey Davis Park",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 33.93911,
+                "lng": 67.709953
+            },
+            "events": [],
+            "title": "Afghanistan",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.628311,
+                "lng": -122.1494481
+            },
+            "events": [],
+            "title": "Afghan Cuisine",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 34.0522342,
+                "lng": -118.2436849
+            },
+            "events": [
+                "Group Testing",
+                "Outdoors exploring inner peace."
+            ],
+            "title": "Los Angeles",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.242295,
+                "lng": -122.3805052
+            },
+            "events": [],
+            "title": "Fife RV Center",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.64897,
+                "lng": -122.360538
+            },
+            "events": [
+                "Group Testing",
+                "NBA FINALS"
+            ],
+            "title": "First Free Methodist Church",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.2547385,
+                "lng": -122.1872927
+            },
+            "events": [],
+            "title": "ASD Systems Inc",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.3712144,
+                "lng": -122.2016681
+            },
+            "events": [],
+            "title": "Asian Pacific Market",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.414483,
+                "lng": -122.1964932
+            },
+            "events": [],
+            "title": "Afford-A-Vet Animal Clinic",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.64897,
+                "lng": -122.360538
+            },
+            "events": [],
+            "title": "First Free Methodist Church",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.414483,
+                "lng": -122.1964932
+            },
+            "events": [],
+            "title": "Afford-A-Vet Animal Clinic",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 42.3600825,
+                "lng": -71.0588801
+            },
+            "events": [
+                "Beach Action",
+                "Group Testing"
+            ],
+            "title": "Boston",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 42.4072107,
+                "lng": -71.3824374
+            },
+            "events": [
+                "First Meeting",
+                "Where it all Begin"
+            ],
+            "title": "Massachusetts",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.291927,
+                "lng": -122.3179321
+            },
+            "events": [
+                "NBA FINALS",
+                "It was an amazing experience at CG Technology Event.",
+                "Beach Action"
+            ],
+            "title": "Lloyd Enterprises Inc - Corporate Office",
+            "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
+        },
+        {
+            "position": {
+                "lat": 47.291927,
+                "lng": -122.3179321
+            },
+            "events": [
+                "NBA FINALS",
+                "It was an amazing experience at CG Technology Event.",
+                "Beach Action",
+                "Outdoors exploring inner peace.",
+                "Where it all Begin"
+            ],
+            "title": "Lloyd Enterprises Inc - Corporate Office",
             "icon": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/e\/e7\/Death_Note_L_ident.jpg"
         }
     ]

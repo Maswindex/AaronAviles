@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: toygan
- * Date: 6/2/18
- * Time: 3:19 AM
+ * aaronLogin.php
+ * Author: Toygan Sevim
+ * Date: 6/14/18
+ *
  *
  * This file will instantiate the first checks for the login
  */
@@ -11,17 +11,11 @@
 //bring the Password file
 session_start();
 
-
-require_once "/home/tsevimgr/config.php";
-
+require_once "/home2/remotewo/config.php";
 
 $checkPassword = $checkUser = "";
 
-
 validateAdmin();
-
-
-//validateAdmin();
 
 /**
  * This function will echo
@@ -46,7 +40,8 @@ function validateAdmin()
 {
 
     //This URL WILL BE A constant
-    $url = "http://tsevim.greenriverdev.com/355/AaronAviles/admin";
+    $url = "./admin";
+
 
     //data coming from submit button post
     if(!isset($_POST['fromJS']))
@@ -56,9 +51,9 @@ function validateAdmin()
         {
             //redirect
             redirectToAdmin($url);
-        } else
+        } else if($_SESSION['user'] != $_POST['username'])
         {
-            echo "Invalid address please leave!";
+            echo "Invalid access!";
         }
 
 

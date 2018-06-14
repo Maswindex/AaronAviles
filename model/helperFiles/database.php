@@ -6,7 +6,7 @@
  * Time: 9:42 PM
  */
 
-require_once "/home/tsevimgr/config.php";
+require_once "/home2/remotewo/config.php";
 
 session_start();
 
